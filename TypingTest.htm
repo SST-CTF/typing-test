@@ -1,0 +1,430 @@
+<SCRIPT LANGUAGE="JavaScript">
+
+// ---------------------------------------------------------------------------
+// TypingTest - JavaScript Application
+
+// Copyright 2015,  <Otakar Andrysek>
+  
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License at <http://www.gnu.org/licenses/> for
+// more details.
+
+// Usage: launch locally or remotely on a client
+
+// Revision history:
+// 2015-02-15 Created by first build ALPHA .1
+// 2015-02-16 Tested ALPHA .2
+// 2015-02-16 Bug-Fixed ALPHA .23
+// ---------------------------------------------------------------------------
+
+//Holds whether or not we have already started the first typing test or now
+//	True = The test has already started
+//	False = The test hasn't started yet
+var hasStarted = false;
+
+//strToTest is an array object that holds various strings to be used as the base typing test
+//	- If you update the array, be sure to update the intToTestCnt with the number of ACTIVE testing strings
+var intToTestCnt = 1;
+var strToTest = new Array ("1st Annual SST Typing Competition\n20,000 Leagues Under the Sea\nBy: Jules Verne\n\nChapter 1\nA Shifting Reef\nThe year 1866 was signalized by a remarkable incident, a mysterious and puzzling phenomenon, which doubtless no one has yet forgotten. Not to mention rumors which agitated the maritime population and excited the public mind, even in the interior of continents, seafaring men were particularly excited. Merchants, common sailors, captains of vessels, skippers, both of Europe and America, naval officers of all countries, and the Governments of several States on the two continents, were deeply interested in the matter.\nFor some time past vessels had been met by \"an enormous thing,\" a long object, spindle-shaped, occasionally phosphorescent, and infinitely larger and more rapid in its movements than a whale.\nThe facts relating to this apparition (entered in various log-books) agreed in most respects as to the shape of the object or creature in question, the untiring rapidity of its movements, its surprising power of locomotion, and the peculiar life with which it seemed endowed. If it was a whale, it surpassed in size all those hitherto classified in science. Taking into consideration the mean of observations made at divers times-rejecting the timid estimate of those who assigned to this object a length of two hundred feet, equally with the exaggerated opinions which set it down as a mile in width and three in length-we might fairly conclude that this mysterious being surpassed greatly all dimensions admitted by the learned ones of the day, if it existed at all.\nAnd that it DID exist was an undeniable fact; and, with that tendency which disposes the human mind in favor of the marvelous, we can understand the excitement produced in the entire world by this supernatural apparition. As to classing it in the list of fables, the idea was out of the question.\nOn the 20th of July, 1866, the steamer Governor Higginson, of the Calcutta and Burnach Steam Navigation Company, had met this moving mass five miles off the east coast of Australia. Captain Baker thought at first that he was in the presence of an unknown sandbank; he even prepared to determine its exact position when two columns of water, projected by the mysterious object, shot with a hissing noise a hundred and fifty feet up into the air. Now, unless the sandbank had been submitted to the intermittent eruption of a geyser, the Governor Higginson had to do neither more nor less than with an aquatic mammal, unknown till then, which threw up from its blow-holes columns of water mixed with air and vapor.\nSimilar facts were observed on the 23rd of July in the same year, in the Pacific Ocean, by the Columbus, of the West India and Pacific Steam Navigation Company. But this extraordinary creature could transport itself from one place to another with surprising velocity; as, in an interval of three days, the Governor Higginson and the Columbus had observed it at two different points of the chart, separated by a distance of more than seven hundred nautical leagues.\nFifteen days later, two thousand miles farther off, the Helvetia, of the Compagnie-Nationale, and the Shannon, of the Royal Mail Steamship Company, sailing to windward in that portion of the Atlantic lying between the United States and Europe, respectively signaled the monster to each other in 42 deg. 15' N. lat. and 60 deg. 35' W. long. In these simultaneous observations they thought themselves justified in estimating the minimum length of the mammal at more than three hundred and fifty feet, as the Shannon and Helvetia were of smaller dimensions than it, though they measured three hundred feet over all.\nNow the largest whales, those which frequent those parts of the sea round the Aleutian, Kulammak, and Umgullich islands, have never exceeded the length of sixty yards, if they attain that.\nIn every place of great resort the monster was the fashion. They sang of it in the cafes, ridiculed it in the papers, and represented it on the stage. All kinds of stories were circulated regarding it. There appeared in the papers caricatures of every gigantic and imaginary creature, from the white whale, the terrible \"Moby Dick\" of sub-arctic regions, to the immense kraken, whose tentacles could entangle a ship of five hundred tons and hurry it into the abyss of the ocean. The legends of ancient times were even revived.\nThen burst forth the unending argument between the believers and the unbelievers in the societies of the wise and the scientific journals. \"The question of the monster\" inflamed all minds. Editors of scientific journals, quarreling with believers in the supernatural, spilled seas of ink during this memorable campaign, some even drawing blood; for from the sea-serpent they came to direct personalities.\nDuring the first months of the year 1867 the question seemed buried, never to revive, when new facts were brought before the public. It was then no longer a scientific problem to be solved, but a real danger seriously to be avoided. The question took quite another shape. The monster became a small island, a rock, a reef, but a reef of indefinite and shifting proportions.\nOn the 5th of March, 1867, the Moravian, of the Montreal Ocean Company, finding herself during the night in 27 deg 30' lat. and 72 deg 15' long., struck on her starboard quarter a rock, marked in no chart for that part of the sea. Under the combined efforts of the wind and its four hundred horse power, it was going at the rate of thirteen knots. Had it not been for the superior strength of the hull of the Moravian, she would have been broken by the shock and gone down with the 237 passengers she was bringing home from Canada.\nThe accident happened about five o'clock in the morning, as the day was breaking. The officers of the quarter-deck hurried to the after-part of the vessel. They examined the sea with the most careful attention. They saw nothing but a strong eddy about three cables' length distant, as if the surface had been violently agitated. The bearings of the place were taken exactly, and the Moravian continued its route without apparent damage. Had it struck on a submerged rock, or on an enormous wreck? They could not tell; but, on examination of the ship's bottom when undergoing repairs, it was found that part of her keel was broken.\nThis fact, so grave in itself, might perhaps have been forgotten like many others if, three weeks after, it had not been re-enacted under similar circumstances. But, thanks to the nationality of the victim of the shock, thanks to the reputation of the company to which the vessel belonged, the circumstance became extensively circulated.\nThe 13th of April, 1867, the sea being beautiful, the breeze favorable, the Scotia, of the Cunard Company's line, found herself in 15 deg 12' long. and 45 deg 37' lat. She was going at the speed of thirteen knots and a half.\nAt seventeen minutes past four in the afternoon, whilst the passengers were assembled at lunch in the great saloon, a slight shock was felt on the hull of the Scotia, on her quarter, a little aft of the port-paddle.\nThe Scotia had not struck, but she had been struck, and seemingly by something rather sharp and penetrating than blunt. The shock had been so slight that no one had been alarmed, had it not been for the shouts of the carpenter's watch, who rushed on to the bridge, exclaiming, \"We are sinking! we are sinking!\" At first the passengers were much frightened, but Captain Anderson hastened to reassure them. The danger could not be imminent. The Scotia, divided into seven compartments by strong partitions, could brave with impunity any leak. Captain Anderson went down immediately into the hold. He found that the sea was pouring into the fifth compartment; and the rapidity of the influx proved that the force of the water was considerable. Fortunately this compartment did not hold the boilers, or the fires would have been immediately extinguished. Captain Anderson ordered the engines to be stopped at once, and one of the men went down to ascertain the extent of the injury. Some minutes afterwards they discovered the existence of a large hole, two yards in diameter, in the ship's bottom. Such a leak could not be stopped; and the Scotia, her paddles half submerged, was obliged to continue her course. She was then three hundred miles from Cape Clear, and, after three days' delay, which caused great uneasiness in Liverpool, she entered the basin of the company.\nThe engineers visited the Scotia, which was put in dry dock. They could scarcely believe it possible; at two yards and a half below water-mark was a regular rent, in the form of an isosceles triangle. The broken place in the iron plates was so perfectly defined that it could not have been more neatly done by a punch. It was clear, then, that the instrument producing the perforation was not of a common stamp and, after having been driven with prodigious strength, and piercing an iron plate 1 3/8 inches thick, had withdrawn itself by a backward motion.\nSuch was the last fact, which resulted in exciting once more the torrent of public opinion. From this moment all unlucky casualties which could not be otherwise accounted for were put down to the monster.\nUpon this imaginary creature rested the responsibility of all these shipwrecks, which unfortunately were considerable; for of three thousand ships whose loss was annually recorded at Lloyd's, the number of sailing and steam-ships supposed to be totally lost, from the absence of all news, amounted to not less than two hundred!\nNow, it was the \"monster\" who, justly or unjustly, was accused of their disappearance, and, thanks to it, communication between the different continents became more and more dangerous. The public demanded sharply that the seas should at any price be relieved from this formidable cetacean.\n\nChapter 2\nPro and Con\nAt the period when these events took place, I had just returned from a scientific research in the disagreeable territory of Nebraska, in the United States. In virtue of my office as Assistant Professor in the Museum of Natural History in Paris, the French Government had attached me to that expedition. After six months in Nebraska, I arrived in New York towards the end of March, laden with a precious collection. My departure for France was fixed for the first days in May. Meanwhile I was occupying myself in classifying my mineralogical, botanical, and zoological riches, when the accident happened to the Scotia.\nI was perfectly up in the subject which was the question of the day. How could I be otherwise? I had read and reread all the American and European papers without being any nearer a conclusion. This mystery puzzled me. Under the impossibility of forming an opinion, I jumped from one extreme to the other. That there really was something could not be doubted, and the incredulous were invited to put their finger on the wound of the Scotia.\nOn my arrival at New York the question was at its height. The theory of the floating island, and the unapproachable sandbank, supported by minds little competent to form a judgment, was abandoned. And, indeed, unless this shoal had a machine in its stomach, how could it change its position with such astonishing rapidity?\nFrom the same cause, the idea of a floating hull of an enormous wreck was given up.\nThere remained, then, only two possible solutions of the question, which created two distinct parties: on one side, those who were for a monster of colossal strength; on the other, those who were for a submarine vessel of enormous motive power.\nBut this last theory, plausible as it was, could not stand against inquiries made in both worlds. That a private gentleman should have such a machine at his command was not likely. Where, when, and how was it built? and how could its construction have been kept secret? Certainly a Government might possess such a destructive machine. And in these disastrous times, when the ingenuity of man has multiplied the power of weapons of war, it was possible that, without the knowledge of others, a State might try to work such a formidable engine.\nBut the idea of a war machine fell before the declaration of Governments. As public interest was in question, and transatlantic communications suffered, their veracity could not be doubted. But how admit that the construction of this submarine boat had escaped the public eye? For a private gentleman to keep the secret under such circumstances would be very difficult, and for a State whose every act is persistently watched by powerful rivals, certainly impossible.\nUpon my arrival in New York several persons did me the honor of consulting me on the phenomenon in question. I had published in France a work in quarto, in two volumes, entitled Mysteries of the Great Submarine Grounds. This book, highly approved of in the learned world, gained for me a special reputation in this rather obscure branch of Natural History. My advice was asked. As long as I could deny the reality of the fact, I confined myself to a decided negative. But soon, finding myself driven into a corner, I was obliged to explain myself point by point. I discussed the question in all its forms, politically and scientifically; and I give here an extract from a carefully-studied article which I published in the number of the 30th of April. It ran as follows:\n\"After examining one by one the different theories, rejecting all other suggestions, it becomes necessary to admit the existence of a marine animal of enormous power.\n\"The great depths of the ocean are entirely unknown to us. Soundings cannot reach them. What passes in those remote depths-what beings live, or can live, twelve or fifteen miles beneath the surface of the waters-what is the organization of these animals, we can scarcely conjecture. However, the solution of the problem submitted to me may modify the form of the dilemma. Either we do know all the varieties of beings which people our planet, or we do not. If we do NOT know them all-if Nature has still secrets in the deeps for us, nothing is more conformable to reason than to admit the existence of fishes, or cetaceans of other kinds, or even of new species, of an organization formed to inhabit the strata inaccessible to soundings, and which an accident of some sort has brought at long intervals to the upper level of the ocean.\n\"If, on the contrary, we DO know all living kinds, we must necessarily seek for the animal in question amongst those marine beings already classed; and, in that case, I should be disposed to admit the existence of a gigantic narwhal.\n\"The common narwhal, or unicorn of the sea, often attains a length of sixty feet. Increase its size fivefold or tenfold, give it strength proportionate to its size, lengthen its destructive weapons, and you obtain the animal required. It will have the proportions determined by the officers of the Shannon, the instrument required by the perforation of the Scotia, and the power necessary to pierce the hull of the steamer.\n\"Indeed, the narwhal is armed with a sort of ivory sword, a halberd, according to the expression of certain naturalists. The principal tusk has the hardness of steel. Some of these tusks have been found buried in the bodies of whales, which the unicorn always attacks with success. Others have been drawn out, not without trouble, from the bottoms of ships, which they had pierced through and through, as a gimlet pierces a barrel. The Museum of the Faculty of Medicine of Paris possesses one of these defensive weapons, two yards and a quarter in length, and fifteen inches in diameter at the base.\n\"Very well! suppose this weapon to be six times stronger and the animal ten times more powerful; launch it at the rate of twenty miles an hour, and you obtain a shock capable of producing the catastrophe required. Until further information, therefore, I shall maintain it to be a sea-unicorn of colossal dimensions, armed not with a halberd, but with a real spur, as the armored frigates, or the `rams' of war, whose massiveness and motive power it would possess at the same time. Thus may this puzzling phenomenon be explained, unless there be something over and above all that one has ever conjectured, seen, perceived, or experienced; which is just within the bounds of possibility.\"\nThese last words were cowardly on my part; but, up to a certain point, I wished to shelter my dignity as professor, and not give too much cause for laughter to the Americans, who laugh well when they do laugh. I reserved for myself a way of escape. In effect, however, I admitted the existence of the \"monster.\" My article was warmly discussed, which procured it a high reputation. It rallied round it a certain number of partisans. The solution it proposed gave, at least, full liberty to the imagination. The human mind delights in grand conceptions of supernatural beings. And the sea is precisely their best vehicle, the only medium through which these giants (against which terrestrial animals, such as elephants or rhinoceroses, are as nothing) can be produced or developed.\nThe industrial and commercial papers treated the question chiefly from this point of view. The Shipping and Mercantile Gazette, the Lloyd's List, the Packet-Boat, and the Maritime and Colonial Review, all papers devoted to insurance companies which threatened to raise their rates of premium, were unanimous on this point. Public opinion had been pronounced. The United States were the first in the field; and in New York they made preparations for an expedition destined to pursue this narwhal. A frigate of great speed, the Abraham Lincoln, was put in commission as soon as possible. The arsenals were opened to Commander Farragut, who hastened the arming of his frigate; but, as it always happens, the moment it was decided to pursue the monster, the monster did not appear. For two months no one heard it spoken of. No ship met with it. It seemed as if this unicorn knew of the plots weaving around it. It had been so much talked of, even through the Atlantic cable, that jesters pretended that this slender fly had stopped a telegram on its passage and was making the most of it.\nSo when the frigate had been armed for a long campaign, and provided with formidable fishing apparatus, no one could tell what course to pursue. Impatience grew apace, when, on the 2nd of July, they learned that a steamer of the line of San Francisco, from California to Shanghai, had seen the animal three weeks before in the North Pacific Ocean. The excitement caused by this news was extreme. The ship was revictualled and well stocked with coal.\nThree hours before the Abraham Lincoln left Brooklyn pier, I received a letter worded as follows:\nTo M. ARONNAX, Professor in the Museum of Paris, Fifth Avenue Hotel, New York.\nSIR,-If you will consent to join the Abraham Lincoln in this expedition, the Government of the United States will with pleasure see France represented in the enterprise. Commander Farragut has a cabin at your disposal.\nVery cordially yours, J.B. HOBSON, Secretary of Marine.\n\nChapter 3\nI Form My Resolution\nThree seconds before the arrival of J. B. Hobson's letter I no more thought of pursuing the unicorn than of attempting the passage of the North Sea. Three seconds after reading the letter of the honorable Secretary of Marine, I felt that my true vocation, the sole end of my life, was to chase this disturbing monster and purge it from the world.\nBut I had just returned from a fatiguing journey, weary and longing for repose. I aspired to nothing more than again seeing my country, my friends, my little lodging by the Jardin des Plantes, my dear and precious collections-but nothing could keep me back! I forgot all-fatigue, friends and collections-and accepted without hesitation the offer of the American Government.\n\"Besides,\" thought I, \"all roads lead back to Europe; and the unicorn may be amiable enough to hurry me towards the coast of France. This worthy animal may allow itself to be caught in the seas of Europe (for my particular benefit), and I will not bring back less than half a yard of his ivory halberd to the Museum of Natural History.\" But in the meanwhile I must seek this narwhal in the North Pacific Ocean, which, to return to France, was taking the road to the antipodes.\n\"Conseil,\" I called in an impatient voice.\nConseil was my servant, a true, devoted Flemish boy, who had accompanied me in all my travels. I liked him, and he returned the liking well. He was quiet by nature, regular from principle, zealous from habit, evincing little disturbance at the different surprises of life, very quick with his hands, and apt at any service required of him; and, despite his name, never giving advice-even when asked for it.\nConseil had followed me for the last ten years wherever science led. Never once did he complain of the length or fatigue of a journey, never make an objection to pack his portmanteau for whatever country it might be, or however far away, whether China or Congo. Besides all this, he had good health, which defied all sickness, and solid muscles, but no nerves; good morals are understood. This boy was thirty years old, and his age to that of his master as fifteen to twenty. May I be excused for saying that I was forty years old?\nBut Conseil had one fault: he was ceremonious to a degree, and would never speak to me but in the third person, which was sometimes provoking.\n\"Conseil,\" said I again, beginning with feverish hands to make preparations for my departure.\nCertainly I was sure of this devoted boy. As a rule, I never asked him if it were convenient for him or not to follow me in my travels; but this time the expedition in question might be prolonged, and the enterprise might be hazardous in pursuit of an animal capable of sinking a frigate as easily as a nutshell. Here there was matter for reflection even to the most impassive man in the world. What would Conseil say?\n\"Conseil,\" I called a third time.\nConseil appeared.\n\"Did you call, sir?\" said he, entering.\n\"Yes, my boy; make preparations for me and yourself too. We leave in two hours.\"\n\"As you please, sir,\" replied Conseil, quietly.\n\"Not an instant to lose; lock in my trunk all traveling utensils, coats, shirts, and stockings-without counting, as many as you can, and make haste.\"\n\"And your collections, sir?\" observed Conseil.\n\"They will keep them at the hotel.\"\n\"We are not returning to Paris, then?\" said Conseil.\n\"Oh! certainly,\" I answered, evasively, \"by making a curve.\"\n\"Will the curve please you, sir?\"\n\"Oh! it will be nothing; not quite so direct a road, that is all. We take our passage in the Abraham, Lincoln.\"\n\"As you think proper, sir,\" coolly replied Conseil.\n\"You see, my friend, it has to do with the monster-the famous narwhal. We are going to purge it from the seas. A glorious mission, but a dangerous one! We cannot tell where we may go; these animals can be very capricious. But we will go whether or no; we have got a captain who is pretty wide-awake.\"\nOur luggage was transported to the deck of the frigate immediately. I hastened on board and asked for Commander Farragut. One of the sailors conducted me to the poop, where I found myself in the presence of a good-looking officer, who held out his hand to me.\n\"Monsieur Pierre Aronnax?\" said he.\n\"Himself,\" replied I. \"Commander Farragut?\"\n\"You are welcome, Professor; your cabin is ready for you.\"\nI bowed, and desired to be conducted to the cabin destined for me.\nThe Abraham Lincoln had been well chosen and equipped for her new destination. She was a frigate of great speed, fitted with high-pressure engines which admitted a pressure of seven atmospheres. Under this the Abraham Lincoln attained the mean speed of nearly eighteen knots and a third an hour-a considerable speed, but, nevertheless, insufficient to grapple with this gigantic cetacean.\nThe interior arrangements of the frigate corresponded to its nautical qualities. I was well satisfied with my cabin, which was in the after part, opening upon the gunroom.\n\"We shall be well off here,\" said I to Conseil.\n\"As well, by your honour's leave, as a hermit-crab in the shell of a whelk,\" said Conseil.\nI left Conseil to stow our trunks conveniently away, and remounted the poop in order to survey the preparations for departure.\nAt that moment Commander Farragut was ordering the last moorings to be cast loose which held the Abraham Lincoln to the pier of Brooklyn. So in a quarter of an hour, perhaps less, the frigate would have sailed without me. I should have missed this extraordinary, supernatural, and incredible expedition, the recital of which may well meet with some suspicion.\nBut Commander Farragut would not lose a day nor an hour in scouring the seas in which the animal had been sighted. He sent for the engineer.\n\"Is the steam full on?\" asked he.\n\"Yes, sir,\" replied the engineer.\n\"Go ahead,\" cried Commander Farragut.\n\nChapter 4\nNed Land\nCaptain Farragut was a good seaman, worthy of the frigate he commanded. His vessel and he were one. He was the soul of it. On the question of the monster there was no doubt in his mind, and he would not allow the existence of the animal to be disputed on board. He believed in it, as certain good women believe in the leviathan-by faith, not by reason. The monster did exist, and he had sworn to rid the seas of it. Either Captain Farragut would kill the narwhal, or the narwhal would kill the captain. There was no third course.\nThe officers on board shared the opinion of their chief. They were ever chatting, discussing, and calculating the various chances of a meeting, watching narrowly the vast surface of the ocean. More than one took up his quarters voluntarily in the cross-trees, who would have cursed such a berth under any other circumstances. As long as the sun described its daily course, the rigging was crowded with sailors, whose feet were burnt to such an extent by the heat of the deck as to render it unbearable; still the Abraham Lincoln had not yet breasted the suspected waters of the Pacific. As to the ship's company, they desired nothing better than to meet the unicorn, to harpoon it, hoist it on board, and despatch it. They watched the sea with eager attention.\nBesides, Captain Farragut had spoken of a certain sum of two thousand dollars, set apart for whoever should first sight the monster, were he cabin-boy, common seaman, or officer.\nI leave you to judge how eyes were used on board the Abraham Lincoln.\nFor my own part I was not behind the others, and, left to no one my share of daily observations. The frigate might have been called the Argus, for a hundred reasons. Only one amongst us, Conseil, seemed to protest by his indifference against the question which so interested us all, and seemed to be out of keeping with the general enthusiasm on board.\nI have said that Captain Farragut had carefully provided his ship with every apparatus for catching the gigantic cetacean. No whaler had ever been better armed. We possessed every known engine, from the harpoon thrown by the hand to the barbed arrows of the blunderbuss, and the explosive balls of the duck-gun. On the forecastle lay the perfection of a breech-loading gun, very thick at the breech, and very narrow in the bore, the model of which had been in the Exhibition of 1867. This precious weapon of American origin could throw with ease a conical projectile of nine pounds to a mean distance of ten miles.\nThus the Abraham Lincoln wanted for no means of destruction; and, what was better still she had on board Ned Land, the prince of harpooners.\nNed Land was a Canadian, with an uncommon quickness of hand, and who knew no equal in his dangerous occupation. Skill, coolness, audacity, and cunning he possessed in a superior degree, and it must be a cunning whale to escape the stroke of his harpoon.\nNed Land was about forty years of age; he was a tall man (more than six feet high), strongly built, grave and taciturn, occasionally violent, and very passionate when contradicted. His person attracted attention, but above all the boldness of his look, which gave a singular expression to his face.\nWho calls himself Canadian calls himself French; and, little communicative as Ned Land was, I must admit that he took a certain liking for me. My nationality drew him to me, no doubt. It was an opportunity for him to talk, and for me to hear, that old language of Rabelais, which is still in use in some Canadian provinces. The harpooner's family was originally from Quebec, and was already a tribe of hardy fishermen when this town belonged to France.\nLittle by little, Ned Land acquired a taste for chatting, and I loved to hear the recital of his adventures in the polar seas. He related his fishing, and his combats, with natural poetry of expression; his recital took the form of an epic poem, and I seemed to be listening to a Canadian Homer singing the Iliad of the regions of the North.\nI am portraying this hardy companion as I really knew him. We are old friends now, united in that unchangeable friendship which is born and cemented amidst extreme dangers. Ah, brave Ned! I ask no more than to live a hundred years longer, that I may have more time to dwell the longer on your memory.\nNow, what was Ned Land's opinion upon the question of the marine monster? I must admit that he did not believe in the unicorn, and was the only one on board who did not share that universal conviction. He even avoided the subject, which I one day thought it my duty to press upon him. One magnificent evening, the 30th July (that is to say, three weeks after our departure), the frigate was abreast of Cape Blanc, thirty miles to leeward of the coast of Patagonia. We had crossed the tropic of Capricorn, and the Straits of Magellan opened less than seven hundred miles to the south. Before eight days were over the Abraham Lincoln would be ploughing the waters of the Pacific.\nSeated on the poop, Ned Land and I were chatting of one thing and another as we looked at this mysterious sea, whose great depths had up to this time been inaccessible to the eye of man. I naturally led up the conversation to the giant unicorn, and examined the various chances of success or failure of the expedition. But, seeing that Ned Land let me speak without saying too much himself, I pressed him more closely.\n\"Well, Ned,\" said I, \"is it possible that you are not convinced of the existence of this cetacean that we are following? Have you any particular reason for being so incredulous?\"\nThe harpooner looked at me fixedly for some moments before answering, struck his broad forehead with his hand (a habit of his), as if to collect himself, and said at last, \"Perhaps I have, Mr. Aronnax.\"\n\"But, Ned, you, a whaler by profession, familiarized with all the great marine mammals-YOU ought to be the last to doubt under such circumstances!\"\n\"That is just what deceives you, Professor,\" replied Ned. \"As a whaler I have followed many a cetacean, harpooned a great number, and killed several; but, however strong or well-armed they may have been, neither their tails nor their weapons would have been able even to scratch the iron plates of a steamer.\"\n\"But, Ned, they tell of ships which the teeth of the narwhal have pierced through and through.\"\n\"Wooden ships-that is possible,\" replied the Canadian, \"but I have never seen it done; and, until further proof, I deny that whales, cetaceans, or sea-unicorns could ever produce the effect you describe.\"\n\"Well, Ned, I repeat it with a conviction resting on the logic of facts. I believe in the existence of a mammal power fully organized, belonging to the branch of vertebrata, like the whales, the cachalots, or the dolphins, and furnished with a horn of defense of great penetrating power.\"\n\"Hum!\" said the harpooner, shaking his head with the air of a man who would not be convinced.\n\"Notice one thing, my worthy Canadian,\" I resumed. \"If such an animal is in existence, if it inhabits the depths of the ocean, if it frequents the strata lying miles below the surface of the water, it must necessarily possess an organization the strength of which would defy all comparison.\"\n\"And why this powerful organization?\" demanded Ned.\n\"Because it requires incalculable strength to keep one's self in these strata and resist their pressure. Listen to me. Let us admit that the pressure of the atmosphere is represented by the weight of a column of water thirty-two feet high. In reality the column of water would be shorter, as we are speaking of sea water, the density of which is greater than that of fresh water. Very well, when you dive, Ned, as many times 32 feet of water as there are above you, so many times does your body bear a pressure equal to that of the atmosphere, that is to say, 15 lb. for each square inch of its surface. It follows, then, that at 320 feet this pressure equals that of 10 atmospheres, of 100 atmospheres at 3,200 feet, and of 1,000 atmospheres at 32,000 feet, that is, about 6 miles; which is equivalent to saying that if you could attain this depth in the ocean, each square three-eighths of an inch of the surface of your body would bear a pressure of 5,600 lb. Ah! my brave Ned, do you know how many square inches you carry on the surface of your body?\"\n\"I have no idea, Mr. Aronnax.\"\n\"About 6,500; and as in reality the atmospheric pressure is about 15 lb. to the square inch, your 6,500 square inches bear at this moment a pressure of 97,500 lb.\"\n\"Without my perceiving it?\"\n\"Without your perceiving it. And if you are not crushed by such a pressure, it is because the air penetrates the interior of your body with equal pressure. Hence perfect equilibrium between the interior and exterior pressure, which thus neutralize each other, and which allows you to bear it without inconvenience. But in the water it is another thing.\"\n\"Yes, I understand,\" replied Ned, becoming more attentive; \"because the water surrounds me, but does not penetrate.\"\n\"Precisely, Ned: so that at 32 feet beneath the surface of the sea you would undergo a pressure of 97,500 lb.; at 320 feet, ten times that pressure; at 3,200 feet, a hundred times that pressure; lastly, at 32,000 feet, a thousand times that pressure would be 97,500,000 lb.-that is to say, that you would be flattened as if you had been drawn from the plates of a hydraulic machine!\"\n\"The devil!\" exclaimed Ned.\n\"Very well, my worthy harpooner, if some vertebrate, several hundred yards long, and large in proportion, can maintain itself in such depths-of those whose surface is represented by millions of square inches, that is by tens of millions of pounds, we must estimate the pressure they undergo. Consider, then, what must be the resistance of their bony structure, and the strength of their organization to withstand such pressure!\"\n\"Why!\" exclaimed Ned Land, \"they must be made of iron plates eight inches thick, like the armored frigates.\"\n\"As you say, Ned. And think what destruction such a mass would cause, if hurled with the speed of an express train against the hull of a vessel.\"\n\"Yes-certainly-perhaps,\" replied the Canadian, shaken by these figures, but not yet willing to give in.\n\"Well, have I convinced you?\"\n\"You have convinced me of one thing, sir, which is that, if such animals do exist at the bottom of the seas, they must necessarily be as strong as you say.\"\n\"But if they do not exist, mine obstinate harpooner, how explain the accident to the Scotia?\"\n\nChapter 5\nAt A Venture\nThe voyage of the Abraham Lincoln was for a long time marked by no special incident. But one circumstance happened which showed the wonderful dexterity of Ned Land, and proved what confidence we might place in him.\nThe 30th of June, the frigate spoke some American whalers, from whom we learned that they knew nothing about the narwhal. But one of them, the captain of the Monroe, knowing that Ned Land had shipped on board the Abraham Lincoln, begged for his help in chasing a whale they had in sight. Commander Farragut, desirous of seeing Ned Land at work, gave him permission to go on board the Monroe. And fate served our Canadian so well that, instead of one whale, he harpooned two with a double blow, striking one straight to the heart, and catching the other after some minutes' pursuit.\nDecidedly, if the monster ever had to do with Ned Land's harpoon, I would not bet in its favor.\nThe frigate skirted the south-east coast of America with great rapidity. The 3rd of July we were at the opening of the Straits of Magellan, level with Cape Vierges. But Commander Farragut would not take a tortuous passage, but doubled Cape Horn.\nThe ship's crew agreed with him. And certainly it was possible that they might meet the narwhal in this narrow pass. Many of the sailors affirmed that the monster could not pass there, \"that he was too big for that!\"\nThe 6th of July, about three o'clock in the afternoon, the Abraham Lincoln, at fifteen miles to the south, doubled the solitary island, this lost rock at the extremity of the American continent, to which some Dutch sailors gave the name of their native town, Cape Horn. The course was taken towards the north-west, and the next day the screw of the frigate was at last beating the waters of the Pacific.\n\"Keep your eyes open!\" called out the sailors.\nAnd they were opened widely. Both eyes and glasses, a little dazzled, it is true, by the prospect of two thousand dollars, had not an instant's repose.\nI myself, for whom money had no charms, was not the least attentive on board. Giving but few minutes to my meals, but a few hours to sleep, indifferent to either rain or sunshine, I did not leave the poop of the vessel. Now leaning on the netting of the forecastle, now on the taffrail, I devoured with eagerness the soft foam which whitened the sea as far as the eye could reach; and how often have I shared the emotion of the majority of the crew, when some capricious whale raised its black back above the waves! The poop of the vessel was crowded on a moment. The cabins poured forth a torrent of sailors and officers, each with heaving breast and troubled eye watching the course of the cetacean. I looked and looked till I was nearly blind, whilst Conseil kept repeating in a calm voice:\n\"If, sir, you would not squint so much, you would see better!\"\nBut vain excitement! The Abraham Lincoln checked its speed and made for the animal signaled, a simple whale, or common cachalot, which soon disappeared amidst a storm of abuse.\nBut the weather was good. The voyage was being accomplished under the most favorable auspices. It was then the bad season in Australia, the July of that zone corresponding to our January in Europe, but the sea was beautiful and easily scanned round a vast circumference.\nThe 20th of July, the tropic of Capricorn was cut by 105d of longitude, and the 27th of the same month we crossed the Equator on the 110th meridian. This passed, the frigate took a more decided westerly direction, and scoured the central waters of the Pacific. Commander Farragut thought, and with reason, that it was better to remain in deep water, and keep clear of continents or islands, which the beast itself seemed to shun (perhaps because there was not enough water for him! suggested the greater part of the crew). The frigate passed at some distance from the Marquesas and the Sandwich Islands, crossed the tropic of Cancer, and made for the China Seas. We were on the theatre of the last diversions of the monster: and, to say truth, we no longer LIVED on board. The entire ship's crew were undergoing a nervous excitement, of which I can give no idea: they could not eat, they could not sleep-twenty times a day, a misconception or an optical illusion of some sailor seated on the taffrail, would cause dreadful perspirations, and these emotions, twenty times repeated, kept us in a state of excitement so violent that a reaction was unavoidable.\nAnd truly, reaction soon showed itself. For three months, during which a day seemed an age, the Abraham Lincoln furrowed all the waters of the Northern Pacific, running at whales, making sharp deviations from her course, veering suddenly from one tack to another, stopping suddenly, putting on steam, and backing ever and anon at the risk of deranging her machinery, and not one point of the Japanese or American coast was left unexplored.\nThe warmest partisans of the enterprise now became its most ardent detractors. Reaction mounted from the crew to the captain himself, and certainly, had it not been for the resolute determination on the part of Captain Farragut, the frigate would have headed due southward. This useless search could not last much longer. The Abraham Lincoln had nothing to reproach herself with, she had done her best to succeed. Never had an American ship's crew shown more zeal or patience; its failure could not be placed to their charge-there remained nothing but to return.\nThis was represented to the commander. The sailors could not hide their discontent, and the service suffered. I will not say there was a mutiny on board, but after a reasonable period of obstinacy, Captain Farragut (as Columbus did) asked for three days' patience. If in three days the monster did not appear, the man at the helm should give three turns of the wheel, and the Abraham Lincoln would make for the European seas.\nThis promise was made on the 2nd of November. It had the effect of rallying the ship's crew. The ocean was watched with renewed attention. Each one wished for a last glance in which to sum up his remembrance. Glasses were used with feverish activity. It was a grand defiance given to the giant narwhal, and he could scarcely fail to answer the summons and \"appear.\"\nTwo days passed, the steam was at half pressure; a thousand schemes were tried to attract the attention and stimulate the apathy of the animal in case it should be met in those parts. Large quantities of bacon were trailed in the wake of the ship, to the great satisfaction (I must say) of the sharks. Small craft radiated in all directions round the Abraham Lincoln as she lay to, and did not leave a spot of the sea unexplored. But the night of the 4th of November arrived without the unveiling of this submarine mystery.\nThe next day, the 5th of November, at twelve, the delay would (morally speaking) expire; after that time, Commander Farragut, faithful to his promise, was to turn the course to the south-east and abandon for ever the northern regions of the Pacific.\nThe frigate was then in 31 deg 15' N. lat. and 136 deg 42' E. long. The coast of Japan still remained less than two hundred miles to leeward. Night was approaching. They had just struck eight bells; large clouds veiled the face of the moon, then in its first quarter. The sea undulated peaceably under the stern of the vessel.\nAt that moment I was leaning forward on the starboard netting. Conseil, standing near me, was looking straight before him. The crew, perched in the ratlines, examined the horizon which contracted and darkened by degrees. Officers with their night glasses scoured the growing darkness: sometimes the ocean sparkled under the rays of the moon, which darted between two clouds, then all trace of light was lost in the darkness.\nIn looking at Conseil, I could see he was undergoing a little of the general influence. At least I thought so. Perhaps for the first time his nerves vibrated to a sentiment of curiosity.\n\"Come, Conseil,\" said I, \"this is the last chance of pocketing the two thousand dollars.\"\n\"May I be permitted to say, sir,\" replied Conseil, \"that I never reckoned on getting the prize; and, had the government of the Union offered a hundred thousand dollars, it would have been none the poorer.\"\n\"You are right, Conseil. It is a foolish affair after all, and one upon which we entered too lightly. What time lost, what useless emotions! We should have been back in France six months ago.\"\n\"In your little room, sir,\" replied Conseil, \"and in your museum, sir; and I should have already classed all your fossils, sir. And the Babiroussa would have been installed in its cage in the Jardin des Plantes, and have drawn all the curious people of the capital!\"\n\"As you say, Conseil. I fancy we shall run a fair chance of being laughed at for our pains.\"\n\"That's tolerably certain,\" replied Conseil, quietly; \"I think they will make fun of you, sir. And, must I say it-?\"\n\"Go on, my good friend.\"\n\"Well, sir, you will only get your deserts.\"\n\"Indeed!\"\n\"When one has the honor of being a savant as you are, sir, one should not expose one's self to-\"\nConseil had not time to finish his compliment. In the midst of general silence a voice had just been heard. It was the voice of Ned Land shouting:\n\"Look out there! The very thing we are looking for-on our weather beam!\"\n\nChapter 6\nAt Full Steam\nAt this cry the whole ship's crew hurried towards the harpooner-commander, officers, masters, sailors, cabin boys; even the engineers left their engines, and the stokers their furnaces.\nThe order to stop her had been given, and the frigate now simply went on by her own momentum. The darkness was then profound, and, however good the Canadian's eyes were, I asked myself how he had managed to see, and what he had been able to see. My heart beat as if it would break. But Ned Land was not mistaken, and we all perceived the object he pointed to. At two cables' length from the Abraham Lincoln, on the starboard quarter, the sea seemed to be illuminated all over. It was not a mere phosphoric phenomenon. The monster emerged some fathoms from the water, and then threw out that very intense but mysterious light mentioned in the report of several captains. This magnificent irradiation must have been produced by an agent of great SHINING power. The luminous part traced on the sea an immense oval, much elongated, the centre of which condensed a burning heat, whose overpowering brilliancy died out by successive gradations.\n\"It is only a massing of phosphoric particles,\" cried one of the officers.\n\"No, sir, certainly not,\" I replied. \"That brightness is of an essentially electrical nature. Besides, see, see! it moves; it is moving forwards, backwards; it is darting towards us!\"\nA general cry arose from the frigate.\n\"Silence!\" said the captain. \"Up with the helm, reverse the engines.\"\nThe steam was shut off, and the Abraham Lincoln, beating to port, described a semicircle.\n\"Right the helm, go ahead,\" cried the captain.\nThese orders were executed, and the frigate moved rapidly from the burning light.\nI was mistaken. She tried to sheer off, but the supernatural animal approached with a velocity double her own.\nWe gasped for breath. Stupefaction more than fear made us dumb and motionless. The animal gained on us, sporting with the waves. It made the round of the frigate, which was then making fourteen knots, and enveloped it with its electric rings like luminous dust.\nThen it moved away two or three miles, leaving a phosphorescent track, like those volumes of steam that the express trains leave behind. All at once from the dark line of the horizon whither it retired to gain its momentum, the monster rushed suddenly towards the Abraham Lincoln with alarming rapidity, stopped suddenly about twenty feet from the hull, and died out-not diving under the water, for its brilliancy did not abate-but suddenly, and as if the source of this brilliant emanation was exhausted. Then it reappeared on the other side of the vessel, as if it had turned and slid under the hull. Any moment a collision might have occurred which would have been fatal to us. However, I was astonished at the maneuvers of the frigate. She fled and did not attack.\nOn the captain's face, generally so impassive, was an expression of unaccountable astonishment.\n\"Mr. Aronnax,\" he said, \"I do not know with what formidable being I have to deal, and I will not imprudently risk my frigate in the midst of this darkness. Besides, how attack this unknown thing, how defend one's self from it? Wait for daylight, and the scene will change.\"\n\"You have no further doubt, captain, of the nature of the animal?\"\n\"No, sir; it is evidently a gigantic narwhal, and an electric one.\"\n\"Perhaps,\" added I, \"one can only approach it with a torpedo.\"\n\"Undoubtedly,\" replied the captain, \"if it possesses such dreadful power, it is the most terrible animal that ever was created. That is why, sir, I must be on my guard.\"\nThe crew were on their feet all night. No one thought of sleep. The Abraham Lincoln, not being able to struggle with such velocity, had moderated its pace, and sailed at half speed. For its part, the narwhal, imitating the frigate, let the waves rock it at will, and seemed decided not to leave the scene of the struggle. Towards midnight, however, it disappeared, or, to use a more appropriate term, it \"died out\" like a large glow-worm. Had it fled? One could only fear, not hope it. But at seven minutes to one o'clock in the morning a deafening whistling was heard, like that produced by a body of water rushing with great violence.\nThe captain, Ned Land, and I were then on the poop, eagerly peering through the profound darkness.\n\"Ned Land,\" asked the commander, \"you have often heard the roaring of whales?\"\n\"Often, sir; but never such whales the sight of which brought me in two thousand dollars. If I can only approach within four harpoons' length of it!\"\n\"But to approach it,\" said the commander, \"I ought to put a whaler at your disposal?\"\n\"Certainly, sir.\"\n\"That will be trifling with the lives of my men.\"\n\"And mine too,\" simply said the harpooner.\nTowards two o'clock in the morning, the burning light reappeared, not less intense, about five miles to windward of the Abraham Lincoln. Notwithstanding the distance, and the noise of the wind and sea, one heard distinctly the loud strokes of the animal's tail, and even its panting breath. It seemed that, at the moment that the enormous narwhal had come to take breath at the surface of the water, the air was engulfed in its lungs, like the steam in the vast cylinders of a machine of two thousand horse-power.\n\"Hum!\" thought I, \"a whale with the strength of a cavalry regiment would be a pretty whale!\"\nWe were on the qui vive till daylight, and prepared for the combat. The fishing implements were laid along the hammock nettings. The second lieutenant loaded the blunder busses, which could throw harpoons to the distance of a mile, and long duck-guns, with explosive bullets, which inflicted mortal wounds even to the most terrible animals. Ned Land contented himself with sharpening his harpoon-a terrible weapon in his hands.\nAt six o'clock day began to break; and, with the first glimmer of light, the electric light of the narwhal disappeared. At seven o'clock the day was sufficiently advanced, but a very thick sea fog obscured our view, and the best spy glasses could not pierce it. That caused disappointment and anger.\nI climbed the mizzen-mast. Some officers were already perched on the mast-heads. At eight o'clock the fog lay heavily on the waves, and its thick scrolls rose little by little. The horizon grew wider and clearer at the same time. Suddenly, just as on the day before, Ned Land's voice was heard:\n\"The thing itself on the port quarter!\" cried the harpooner.\nEvery eye was turned towards the point indicated. There, a mile and a half from the frigate, a long blackish body emerged a yard above the waves. Its tail, violently agitated, produced a considerable eddy. Never did a tail beat the sea with such violence. An immense track, of dazzling whiteness, marked the passage of the animal, and described a long curve.\nThe frigate approached the cetacean. I examined it thoroughly.\nThe reports of the Shannon and of the Helvetia had rather exaggerated its size, and I estimated its length at only two hundred and fifty feet. As to its dimensions, I could only conjecture them to be admirably proportioned. While I watched this phenomenon, two jets of steam and water were ejected from its vents, and rose to the height of 120 feet; thus I ascertained its way of breathing. I concluded definitely that it belonged to the vertebrate branch, class mammalia.\nThe crew waited impatiently for their chief's orders. The latter, after having observed the animal attentively, called the engineer. The engineer ran to him.\n\"Sir,\" said the commander, \"you have steam up?\"\n\"Yes, sir,\" answered the engineer.\n\"Well, make up your fires and put on all steam.\"\nThree hurrahs greeted this order. The time for the struggle had arrived. Some moments after, the two funnels of the frigate vomited torrents of black smoke, and the bridge quaked under the trembling of the boilers.\nThe Abraham Lincoln, propelled by her wonderful screw, went straight at the animal. The latter allowed it to come within half a cable's length; then, as if disdaining to dive, it took a little turn, and stopped a short distance off.\nThis pursuit lasted nearly three-quarters of an hour, without the frigate gaining two yards on the cetacean. It was quite evident that at that rate we should never come up with it.\n\"Well, Mr. Land,\" asked the captain, \"do you advise me to put the boats out to sea?\"\n\"No, sir,\" replied Ned Land; \"because we shall not take that beast easily.\"\n\"What shall we do then?\"\n\"Put on more steam if you can, sir. With your leave, I mean to post myself under the bowsprit, and, if we get within harpooning distance, I shall throw my harpoon.\"\n\"Go, Ned,\" said the captain. \"Engineer, put on more pressure.\"\nNed Land went to his post. The fires were increased, the screw revolved forty-three times a minute, and the steam poured out of the valves. We heaved the log, and calculated that the Abraham Lincoln was going at the rate of 18 1/2 miles an hour.\nBut the accursed animal swam at the same speed.\nFor a whole hour the frigate kept up this pace, without gaining six feet. It was humiliating for one of the swiftest sailers in the American navy. A stubborn anger seized the crew; the sailors abused the monster, who, as before, disdained to answer them; the captain no longer contented himself with twisting his beard-he gnawed it.\nThe engineer was called again.\n\"You have turned full steam on?\"\n\"Yes, sir,\" replied the engineer.\nThe speed of the Abraham Lincoln increased. Its masts trembled down to their stepping holes, and the clouds of smoke could hardly find way out of the narrow funnels.\nThey heaved the log a second time.\n\"Well?\" asked the captain of the man at the wheel.\n\"Nineteen miles and three-tenths, sir.\"\n\"Clap on more steam.\"\nThe engineer obeyed. The manometer showed ten degrees. But the cetacean grew warm itself, no doubt; for without straining itself, it made 19 3/10 miles.\nWhat a pursuit! No, I cannot describe the emotion that vibrated through me. Ned Land kept his post, harpoon in hand. Several times the animal let us gain upon it.-\"We shall catch it! we shall catch it!\" cried the Canadian. But just as he was going to strike, the cetacean stole away with a rapidity that could not be estimated at less than thirty miles an hour, and even during our maximum of speed, it bullied the frigate, going round and round it. A cry of fury broke from everyone!\nAt noon we were no further advanced than at eight o'clock in the morning.\nThe captain then decided to take more direct means.\n\"Ah!\" said he, \"that animal goes quicker than the Abraham Lincoln. Very well! we will see whether it will escape these conical bullets. Send your men to the forecastle, sir.\"\nThe forecastle gun was immediately loaded and slewed round. But the shot passed some feet above the cetacean, which was half a mile off.\n\"Another, more to the right,\" cried the commander, \"and five dollars to whoever will hit that infernal beast.\"\nAn old gunner with a grey beard-that I can see now-with steady eye and grave face, went up to the gun and took a long aim. A loud report was heard, with which were mingled the cheers of the crew.\nThe bullet did its work; it hit the animal, and, sliding off the rounded surface, was lost in two miles depth of sea.\nThe chase began again, and the captain, leaning towards me, said:\n\"I will pursue that beast till my frigate bursts up.\"\n\"Yes,\" answered I; \"and you will be quite right to do it.\"\nI wished the beast would exhaust itself, and not be insensible to fatigue like a steam engine. But it was of no use. Hours passed, without its showing any signs of exhaustion.\nHowever, it must be said in praise of the Abraham Lincoln that she struggled on indefatigably. I cannot reckon the distance she made under three hundred miles during this unlucky day, November the 6th. But night came on, and overshadowed the rough ocean.\nNow I thought our expedition was at an end, and that we should never again see the extraordinary animal. I was mistaken. At ten minutes to eleven in the evening, the electric light reappeared three miles to windward of the frigate, as pure, as intense as during the preceding night.\nThe narwhal seemed motionless; perhaps, tired with its day's work, it slept, letting itself float with the undulation of the waves. Now was a chance of which the captain resolved to take advantage.\nHe gave his orders. The Abraham Lincoln kept up half steam, and advanced cautiously so as not to awake its adversary. It is no rare thing to meet in the middle of the ocean whales so sound asleep that they can be successfully attacked, and Ned Land had harpooned more than one during its sleep. The Canadian went to take his place again under the bowsprit.\nThe frigate approached noiselessly, stopped at two cables' lengths from the animal, and following its track. No one breathed; a deep silence reigned on the bridge. We were not a hundred feet from the burning focus, the light of which increased and dazzled our eyes.\nAt this moment, leaning on the forecastle bulwark, I saw below me Ned Land grappling the martingale in one hand, brandishing his terrible harpoon in the other, scarcely twenty feet from the motionless animal. Suddenly his arm straightened, and the harpoon was thrown; I heard the sonorous stroke of the weapon, which seemed to have struck a hard body. The electric light went out suddenly, and two enormous waterspouts broke over the bridge of the frigate, rushing like a torrent from stem to stern, overthrowing men, and breaking the lashings of the spars. A fearful shock followed, and, thrown over the rail without having time to stop myself, I fell into the sea.")
+var strToTestType = "";
+
+var checkStatusInt;
+
+//General functions to allow for left and right trimming / selection of a string
+function Left(str, n){
+	if (n <= 0)
+	    return "";
+	else if (n > String(str).length)
+	    return str;
+	else
+	    return String(str).substring(0,n);
+}
+function Right(str, n){
+    if (n <= 0)
+       return "";
+    else if (n > String(str).length)
+       return str;
+    else {
+       var iLen = String(str).length;
+       return String(str).substring(iLen, iLen - n);
+    }
+}
+
+//beginTest Function/Sub initializes the test and starts the timers to determine the WPM and Accuracy
+function beginTest()
+{
+	//We're starting the test, so set the variable to true
+	hasStarted = true;
+	
+	//Generate a date value for the current time as a baseline
+	day = new Date();
+	
+	//Count the number of valid words in the testing baseline string
+	cnt = strToTestType.split(" ").length;
+	
+	//Set the total word count to the number of valid words that need to be typed
+	word = cnt;
+	
+	//Set the exact time of day that the testing has started
+	startType = day.getTime();
+	
+	//Disable the printing button (if used, in this download it's not included)
+	document.getElementById("printB").disabled = true;
+	
+	calcStat();
+	
+	//Initialize the testing objects by setting the values of the buttons, what to type, and what is typed
+	document.JobOp.start.value = "-- Typing Test Started --";
+	document.JobOp.start.disabled = true;
+	document.JobOp.given.value = strToTestType;
+	document.JobOp.typed.value = "";
+	
+	//Apply focus to the text box the user will type the test into
+	document.JobOp.typed.focus();
+	document.JobOp.typed.select();
+}
+
+//User to deter from Copy and Paste, also acting as a testing protection system
+//	Is fired when the user attempts to click or apply focus to the text box containing what needs to be typed
+function deterCPProtect()
+{
+	document.JobOp.typed.focus();
+}
+
+//The final call to end the test -- used when the user has completed their assignment
+//	This function/sub is responsible for calculating the accuracy, and setting post-test variables
+function endTest()
+{
+	//Clear the timer that tracks the progress of the test, since it's complete
+	clearTimeout(checkStatusInt);
+	
+	//Initialize an object with the current date/time so we can calculate the difference	
+	eDay = new Date();
+	endType = eDay.getTime();
+	totalTime = ((endType - startType) / 1000)
+	
+	//Calculate the typing speed by taking the number of valid words typed by the total time taken and multiplying it by one minute in seconds (60)
+	//***** 1A *************************************************************************************************************************** 1A *****
+	//We also want to disregard if they used a double-space after a period, if we didn't then it would throw everything after the space off
+	//Since we are using the space as the seperator for words; it's the difference between "Hey.  This is me." versus "Hey. This is me." and
+	//Having the last three words reporting as wrong/errors due to the double space after the first period, see?
+	//*********************************************************************************************************************************************
+	wpmType = Math.round(((document.JobOp.typed.value.replace(/  /g, " ").split(" ").length)/totalTime) * 60)
+	
+	//Set the start test button label and enabled state
+	document.JobOp.start.value = ">> Re-Start Typing Test <<";
+	document.JobOp.start.disabled = false;
+	
+	//Flip the starting and stopping buttons around since the test is complete
+	document.JobOp.stop.style.display="none";
+	document.JobOp.start.style.display="block";
+	
+	//Declare an array of valid words for what NEEDED to be typed and what WAS typed
+	//Again, refer to the above statement on removing the double spaces globally (1A)	
+	var typedValues = document.JobOp.typed.value.replace(/  /g, " ");
+	var neededValues = Left(document.JobOp.given.value, typedValues.length).replace(/  /g, " ").split(" ");
+	typedValues = typedValues.split(" ");
+		
+	//Disable the area where the user types the test input
+	document.JobOp.typed.disabled=true;
+	
+	//Declare variable references to various statistical layers
+	var tErr = document.getElementById("stat_errors");
+	var tscore = document.getElementById("stat_score");
+	var tStat = document.getElementById("stat_wpm");
+	var tTT = document.getElementById("stat_timeleft");
+	
+	var tArea = document.getElementById("TypeArea");
+	var aArea = document.getElementById("AfterAction");
+	var eArea = document.getElementById("expectedArea");
+		
+	//Initialize the counting variables for the good valid words and the bad valid words
+	var goodWords = 0;
+	var badWords = 0;
+	
+	//Declare a variable to hold the error words we found and also a detailed after action report
+	var errWords = "";
+	var aftReport = "<b>Detailed Summary:</b><br><font color=\"DarkGreen\">";
+	
+	//Enable the printing button
+	document.getElementById("printB").disabled = false;
+	
+	//Loop through the valid words that were possible (those in the test baseline of needing to be typed)
+	var str;
+	var i = 0;
+	for (var i = 0; i < word; i++)
+	{
+		//If there is a word the user typed that is in the spot of the expected word, process it
+		if (typedValues.length > i)
+		{
+			//Declare the word we expect, and the word we recieved
+			var neededWord = neededValues[i];
+			var typedWord = typedValues[i];
+			
+			//Determine if the user typed the correct word or incorrect
+			if (typedWord != neededWord)
+			{
+				//They typed it incorrectly, so increment the bad words counter
+				badWords = badWords + 1;
+				errWords += typedWord + " = " + neededWord + "\n";
+				aftReport += "<font color=\"Red\"><u>" + neededWord + "</u></font> ";
+			}
+			else
+			{
+				//They typed it correctly, so increment the good words counter
+				goodWords = goodWords + 1;
+				aftReport += neededWord + " ";
+			}
+		}
+		else
+		{
+			//They didn't even type this word, so increment the bad words counter
+			//Update: We don't want to apply this penalty because they may have chosen to end the test
+			//		  and we only want to track what they DID type and score off of it.
+			//badWords = badWords + 1;
+		}	
+	}
+	
+	//Finalize the after action report variable with the typing summary at the beginning (now that we have the final good and bad word counts)
+	aftReport += "</font>";
+	aftReport = "<b>Typing Summary:</b><br>You typed " + (document.JobOp.typed.value.replace(/  /g, " ").split(" ").length) + " words in " + totalTime + " seconds, a speed of about " + wpmType + " words per minute.\n\nYou also had " + badWords + " errors, and " + goodWords + " correct words, giving scoring of " + ((goodWords / (goodWords+badWords)) * 100).toFixed(2) + "%.<br><br>" + aftReport;
+	
+	//Set the statistical label variables with what we found (errors, words per minute, time taken, etc)	
+	tErr.innerText = badWords + " Errors";
+	tStat.innerText= (wpmType-badWords) + " WPM / " + wpmType + " WPM";
+	tTT.innerText = totalTime.toFixed(2) + " sec. elapsed";
+	
+	//Calculate the accuracy score based on good words typed versus total expected words -- and only show the percentage as ###.##
+	tscore.innerText = ((goodWords / (goodWords+badWords)) * 100).toFixed(2) + "%";
+	
+	//Flip the display of the typing area and the expected area with the after action display area
+	aArea.style.display = "block";
+	tArea.style.display = "none";
+	eArea.style.display = "none";
+	
+	//Set the after action details report to the summary as we found; and in case there are more words found than typed
+	//Set the undefined areas of the report to a space, otherwise we may get un-needed word holders
+	aArea.innerHTML = aftReport.replace(/undefined/g, " ");
+	
+	//Notify the user of their testing status via a JavaScript Alert
+	//Update: There isn't any need in showing this popup now that we are hiding the typing area and showing a scoring area
+	//alert("You typed " + (document.JobOp.typed.value.split(" ").length) + " words in " + totalTime + " seconds, a speed of about " + wpmType + " words per minute.\n\nYou also had " + badWords + " errors, and " + goodWords + " correct words, giving scoring of " + ((goodWords / (goodWords+badWords)) * 100).toFixed(2) + "%.");
+}
+
+//calcStat is a function called as the user types to dynamically update the statistical information
+function calcStat()
+{
+//If something goes wrong, we don't want to cancel the test -- so fallback error proection (in a way, just standard error handling)
+try {
+	//Reset the timer to fire the statistical update function again in 250ms
+	//We do this here so that if the test has ended (below) we can cancel and stop it
+	checkStatusInt=setTimeout('calcStat();',250);
+	
+	//Declare reference variables to the statistical information labels
+	var tStat = document.getElementById("stat_wpm");
+	var tTT = document.getElementById("stat_timeleft");
+	
+	var tProg = document.getElementById("stProg");
+	var tProgt = document.getElementById("thisProg");
+	
+	var tArea = document.getElementById("TypeArea");
+	var aArea = document.getElementById("AfterAction");
+	var eArea = document.getElementById("expectedArea");
+			
+	//Refer to 1A (above) for details on why we are removing the double space
+	var thisTyped = document.JobOp.typed.value.replace(/  /g, " ");
+	
+	//Create a temp variable with the current time of day to calculate the WPM
+	eDay = new Date();
+	endType = eDay.getTime();
+	totalTime = ((endType - startType) / 1000)
+
+	//Calculate the typing speed by taking the number of valid words typed by the total time taken and multiplying it by one minute in seconds (60)
+	wpmType = Math.round(((thisTyped.split(" ").length)/totalTime) * 60)
+
+	//Set the words per minute variable on the statistical information block
+	tStat.innerText=wpmType + " WPM";
+	
+	//The test has started apparantly, so disable the stop button
+	document.JobOp.stop.disabled = false;
+		
+	//Flip the stop and start button display status
+	document.JobOp.stop.style.display="block";
+	document.JobOp.start.style.display="none";
+	
+	//Calculate and show the time taken to reach this point of the test and also the remaining time left in the test
+	//Colorize it based on the time left (red if less than 5 seconds, orange if less than 15)
+	if (Number(3600-totalTime) < 5)
+	{
+		tTT.innerHTML="<font color=\"Red\">" + String(totalTime.toFixed(2)) + " sec. / " + String(Number(3600-totalTime).toFixed(2)) + " sec.</font>";
+	}
+	else
+	{
+		if (Number(3600-totalTime) < 15)
+		{
+			tTT.innerHTML="<font color=\"Orange\">" + String(totalTime.toFixed(2)) + " sec. / " + String(Number(3600-totalTime).toFixed(2)) + " sec.</font>";
+		}
+		else
+		{
+			tTT.innerHTML=String(totalTime.toFixed(2)) + " sec. / " + String(Number(3600-totalTime).toFixed(2)) + " sec.";
+		}
+	}
+		
+	//Determine if the user has typed all of the words expected
+	if ((((thisTyped.split(" ").length)/word)*100).toFixed(2) >= 100)
+	{
+		tProg.width="100%";
+		
+		tProgt.innerText = "100%";
+	}
+	else
+	{
+		//Set the progress bar with the exact percentage of the test completed
+		tProg.width=String((((thisTyped.split(" ").length)/word)*100).toFixed(2))+"%";
+		
+		tProgt.innerText = tProg.width;
+	}
+	
+	//Determine if the test is complete based on them having typed everything exactly as expected
+	if (thisTyped.value == document.JobOp.given.value)
+	{
+		endTest();
+	}
+	
+	//Determine if the test is complete based on whether or not they have typed exactly or exceeded the number of valid words (determined by a space)
+	if (word <= (thisTyped.split(" ").length))
+	{
+		endTest();
+	}
+	
+	//Check the timer; stop the test if we are at or exceeded 3600 seconds
+	if (totalTime >= 3600)
+	{
+		endTest();
+	}
+	
+//Our handy error handling
+} catch(e){};
+}
+
+//Simply does a check on focus to determine if the test has started
+function doCheck()
+{
+	if (hasStarted == false)
+	{
+		//The test has not started, but the user is typing already -- maybe we should start?
+		beginTest(); //Yes, we should -- consider it done!
+	}
+}
+</SCRIPT>
+
+											<div align="center">
+												<table border="0" cellpadding="0" cellspacing="0" width="100%">
+													<tr>
+														<td style="border-bottom: 2px solid #354562; padding: 4px" class="titlec">
+														<input disabled id="printB" onclick="window.print();" type="button" value="Print Results" name="printB" style="float: right; font-size: 8pt; font-family: Arial"><input onclick="document.getElementById('AfterAction').style.display='none';document.getElementById('expectedArea').style.display='block';document.getElementById('typeArea').style.display='block';document.JobOp.typed.value='';document.JobOp.typed.disabled=false;randNum = Math.floor((Math.random() * 10)) % intToTestCnt;strToTestType = strToTest[randNum];document.JobOp.given.value = strToTestType;" type="button" value="New Test" name="newtest" style="float: right; font-size: 8pt; font-family: Arial">2015 SST Typing Competition</td>
+													</tr>
+												</table>
+											</div>
+											<table border="0" cellpadding="0" cellspacing="0" width="100%">
+												<tr>
+													<td style="border-bottom: 1px dotted #860E36; padding: 4px" class="titlea" background="Images/Lt_Red_Back.gif" width="460">
+													Accurately and precisely 
+													evaluate your typing speed 
+													and accuracy.</td>
+													<td style="border-bottom: 1px dotted #860E36; padding: 4px" class="titlea" background="Images/Lt_Red_Back.gif" width="190">
+													<p align="right">ALPHA .23</td>
+												</tr>
+												<tr>
+													<td style="padding: 4px" class="bodya" colspan="2">
+
+<FORM name="JobOp">
+<table border="0" cellpadding="5" width="100%">
+	<tr>
+		<td>
+		<table border="0" cellpadding="5" width="100%">
+			<tr>
+				<td align="center" style="border-left: 1px solid #344270; border-right: 2px solid #344270; border-top: 1px solid #344270; border-bottom: 2px solid #344270; padding: 5px; background-color: #CED3E8" background="Images/Blue_Back.gif">
+				<b><font face="Arial" size="2" color="#FFFFFF">Net / Gross WPM</font></b></td>
+				<td align="center" style="border-left: 1px solid #344270; border-right: 2px solid #344270; border-top: 1px solid #344270; border-bottom: 2px solid #344270; padding: 5px; background-color: #CED3E8" background="Images/Blue_Back.gif">
+				<b><font face="Arial" size="2" color="#FFFFFF">Entry Errors</font></b></td>
+				<td align="center" style="border-left: 1px solid #344270; border-right: 2px solid #344270; border-top: 1px solid #344270; border-bottom: 2px solid #344270; padding: 5px; background-color: #CED3E8" background="Images/Blue_Back.gif">
+				<b><font face="Arial" size="2" color="#FFFFFF">Accuracy</font></b></td>
+				<td align="center" style="border-left: 1px solid #344270; border-right: 2px solid #344270; border-top: 1px solid #344270; border-bottom: 2px solid #344270; padding: 5px; background-color: #CED3E8" background="Images/Blue_Back.gif">
+				<b><font face="Arial" size="2" color="#FFFFFF">Elapsed / 
+				Remaining</font></b></td>
+			</tr>
+			<tr>
+				<td align="center"><font size="2" face="Arial">
+				<div id="stat_wpm">Not Started</div></font></td>
+				<td style="border-left: 1px dotted #8794C7; border-right: 1px dotted #8794C7; border-top-width: 1px; border-bottom-width: 1px" align="center">
+				<font size="2" face="Arial"><div id="stat_errors">Waiting...</div></font></td>
+				<td style="border-left-width: 1px; border-right: 1px dotted #8794C7; border-top-width: 1px; border-bottom-width: 1px" align="center">
+				<font size="2" face="Arial"><div id="stat_score">Waiting...</div></font></td>
+				<td align="center"><font size="2" face="Arial">
+				<div id="stat_timeleft">0:00</div></font></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top: 1px solid #344270; border-bottom-width: 1px">
+		<div id="expectedArea" style="display:block">
+		<p style="margin-top: 0; margin-bottom: 0">
+		<font color="#7A88C0" face="Arial" size="1">
+<textarea name="given" cols=53 rows=10 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-family:Arial; font-size:9pt">Click on the button below to start the typing test.  What you will be expected to type will appear here.</textarea></font>
+		</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p align="center" style="margin-top: 0; margin-bottom: 2px">
+		<input type=button value="&gt;&gt; Start Typing Test &lt;&lt;" name="start" onClick="beginTest()" style="display:block; border-left:1px solid #293358; border-right:2px solid #293358; border-top:1px solid #293358; border-bottom:2px solid #293358; width: 100%; background-color: #9BB892; color:#FFFFFF; background-image:url('Images/Green_Back.gif')"><p align="center" style="margin-top: 0; margin-bottom: 0">
+		<input disabled type=button value="&gt;&gt; End Typing Test &lt;&lt;" name="stop" onClick="endTest()" style="display:none; border-left:1px solid #293358; border-right:2px solid #293358; border-top:1px solid #293358; border-bottom:2px solid #293358; width: 100%; background-color: #F05959; color:#FFFFFF; background-image:url('Images/Red_Back.gif')"></td>
+	</tr>
+	<tr>
+		<td style="font-family: Arial; font-size: 9pt">
+		<div id="typeArea" style="display:block">
+		<table border="0" width="100%" cellspacing="1">
+			<tr>
+				<td style="border: 1px solid #9CA8D1; background-color: #EAECF4">
+				<div align="left">
+					<table id="stProg" border="0" width="0%" cellspacing="1">
+						<tr>
+							<td style="border: 1px solid #344270; background-color: #8F9BCB; font-family:Arial; font-size:8pt; color:#FFFFFF" align="right" background="Images/Blue_Back.gif">
+							<div id="thisProg">0%</div></td>
+						</tr>
+					</table>
+				</div>
+				</td>
+			</tr>
+		</table>
+		<p style="margin-top: 0; margin-bottom: 0">
+		<font color="#7A88C0" face="Arial" size="1">
+		<textarea onkeypress="doCheck();" onkeydown="//calcStat()" name="typed" cols=53 rows=10 wrap=on style="width: 100%; border: 1px solid #344270; padding: 2px; font-family:Arial; font-size:9pt"></textarea></font>
+		</div>
+		<div id="afterAction" style="display:none">
+		
+		</div>
+		</td>
+	</tr>
+	<script>
+	randNum = Math.floor((Math.random() * 10)) % intToTestCnt;
+	strToTestType = strToTest[randNum];
+	
+	document.JobOp.given.value = strToTestType;
+	document.JobOp.typed.focus();
+	</script>
+	</table>
+</FORM>
+													</td>
+												</tr>
+											</table>
+										
