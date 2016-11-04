@@ -1,180 +1,271 @@
 <script src="TypingTest.js"></script>
-
 <!DOCTYPE html>
 <html>
-	<title>SST CTF Typing Competition</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/stylesheet.css">
-	<link rel="stylesheet" href="fonts/raleway.css">
-	<link rel="stylesheet" href="fonts/font-awesome.min.css">
-	<style>
-		html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-	</style>
-	<body class="w3-light-grey">
-		<div class="w3-row-padding w3-margin-bottom">
-			<div class="w3-quarter">
-				<div class="w3-container w3-blue w3-padding-16">
-					<div class="w3-left"><i class="fa fa-calculator w3-xxxlarge"></i></div>
-					<div class="w3-right">
-						<h3>52</h3>
-					</div>
-					<div class="w3-clear"></div>
-					<h4>Net / Gross WPM</h4>
-				</div>
-			</div>
-			<div class="w3-quarter">
-				<div class="w3-container w3-red w3-padding-16">
-					<div class="w3-left"><i class="fa fa-exclamation-triangle w3-xxxlarge"></i></div>
-					<div class="w3-right">
-						<h3>99</h3>
-					</div>
-					<div class="w3-clear"></div>
-					<h4>Entry Errors</h4>
-				</div>
-			</div>
-			<div class="w3-quarter">
-				<div class="w3-container w3-teal w3-padding-16">
-					<div class="w3-left"><i class="fa fa-bullseye w3-xxxlarge"></i></div>
-					<div class="w3-right">
-						<h3>23</h3>
-					</div>
-					<div class="w3-clear"></div>
-					<h4>Accuracy</h4>
-				</div>
-			</div>
-			<div class="w3-quarter">
-				<div class="w3-container w3-orange w3-text-white w3-padding-16">
-					<div class="w3-left"><i class="fa fa-clock-o w3-xxxlarge"></i></div>
-					<div class="w3-right">
-						<h3>50</h3>
-					</div>
-					<div class="w3-clear"></div>
-					<h4>Elapsed / Remaining Time</h4>
-				</div>
-			</div>
-		</div>
+<title>SST CTF Typing Competition</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/stylesheet.css">
+<link rel="stylesheet" href="fonts/raleway.css">
+<link rel="stylesheet" href="fonts/font-awesome.min.css">
+<style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Raleway", sans-serif
+    }
+</style>
 
-<div align="center">
+<body class="w3-light-grey">
+
+    <!-- Top container -->
+    <div class="w3-container w3-top w3-black w3-large w3-padding" style="z-index:4">
+        <button class="w3-btn w3-hide-large w3-padding-0 w3-hover-text-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+        <span class="w3-right">Logo</span>
+    </div>
+
+    <!-- Sidenav/menu -->
+    <nav class="w3-sidenav w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidenav"><br>
+        <div class="w3-container w3-row">
+            <div class="w3-col s4">
+                <img src="/w3images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">
+            </div>
+            <div class="w3-col s8">
+                <span>Welcome, <strong>Mike</strong></span><br>
+                <a href="#" class="w3-hover-none w3-hover-text-red w3-show-inline-block"><i class="fa fa-envelope"></i></a>
+                <a href="#" class="w3-hover-none w3-hover-text-green w3-show-inline-block"><i class="fa fa-user"></i></a>
+                <a href="#" class="w3-hover-none w3-hover-text-blue w3-show-inline-block"><i class="fa fa-cog"></i></a>
+            </div>
+        </div>
+        <hr>
+        <div class="w3-container">
+            <h5>Dashboard</h5>
+        </div>
+        <a href="#" class="w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+        <a href="#" class="w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
+        <a href="#" class="w3-padding"><i class="fa fa-eye fa-fw"></i>  Views</a>
+        <a href="#" class="w3-padding"><i class="fa fa-users fa-fw"></i>  Traffic</a>
+        <a href="#" class="w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Geo</a>
+        <a href="#" class="w3-padding"><i class="fa fa-diamond fa-fw"></i>  Orders</a>
+        <a href="#" class="w3-padding"><i class="fa fa-bell fa-fw"></i>  News</a>
+        <a href="#" class="w3-padding"><i class="fa fa-bank fa-fw"></i>  General</a>
+        <a href="#" class="w3-padding"><i class="fa fa-history fa-fw"></i>  History</a>
+        <a href="#" class="w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
+    </nav>
+
+
+    <!-- Overlay effect when opening sidenav on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+
+    <div class="w3-row-padding w3-margin-bottom">
+        <div class="w3-quarter">
+            <div class="w3-container w3-blue w3-padding-16">
+                <div class="w3-left"><i class="fa fa-calculator w3-xxxlarge"></i></div>
+                <div class="w3-right">
+                    <h3>52</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4>Net / Gross WPM</h4>
+            </div>
+        </div>
+        <div class="w3-quarter">
+            <div class="w3-container w3-red w3-padding-16">
+                <div class="w3-left"><i class="fa fa-exclamation-triangle w3-xxxlarge"></i></div>
+                <div class="w3-right">
+                    <h3>99</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4>Entry Errors</h4>
+            </div>
+        </div>
+        <!-- Test -->
+        <FORM name="JobOp">
+        <div class="w3-quarter">
+            <div class="w3-container w3-teal w3-padding-16">
+                <div class="w3-left"><i class="fa fa-bullseye w3-xxxlarge"></i></div>
+                <div class="w3-right">
+                    <h3>23</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4>Accuracy</h4>
+            </div>
+        </div>
+        </FORM>
+        <!-- /Test -->
+        <div class="w3-quarter">
+            <div class="w3-container w3-orange w3-text-white w3-padding-16">
+                <div class="w3-left"><i class="fa fa-clock-o w3-xxxlarge"></i></div>
+                <div class="w3-right">
+                    <h3>50</h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4>Elapsed / Remaining Time</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- Begin Old Code [TO BE REMOVED] -->
+    <div align="center">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td style="border-bottom: 2px solid #354562; padding: 4px" class="titlec">
+                    <input disabled id="printB" onclick="window.print();" type="button" value="Print Results" name="printB" style="float: right; font-size: 8pt; font-family: Arial">
+                    <input onclick="document.getElementById('AfterAction').style.display='none';document.getElementById('expectedArea').style.display='block';document.getElementById('typeArea').style.display='block';document.JobOp.typed.value='';document.JobOp.typed.disabled=false;randNum = Math.floor((Math.random() * 10)) % intToTestCnt;strToTestType = strToTest[randNum];document.JobOp.given.value = strToTestType;" type="button" value="New Test" name="newtest" style="float: right; font-size: 8pt; font-family: Arial">2015 SST Typing Competition
+                </td>
+            </tr>
+        </table>
+    </div>
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
-            <td style="border-bottom: 2px solid #354562; padding: 4px" class="titlec">
-                <input disabled id="printB" onclick="window.print();" type="button" value="Print Results" name="printB" style="float: right; font-size: 8pt; font-family: Arial">
-                <input onclick="document.getElementById('AfterAction').style.display='none';document.getElementById('expectedArea').style.display='block';document.getElementById('typeArea').style.display='block';document.JobOp.typed.value='';document.JobOp.typed.disabled=false;randNum = Math.floor((Math.random() * 10)) % intToTestCnt;strToTestType = strToTest[randNum];document.JobOp.given.value = strToTestType;" type="button" value="New Test" name="newtest" style="float: right; font-size: 8pt; font-family: Arial">2015 SST Typing Competition
-            </td>
-        </tr>
-    </table>
-</div>
-<table border="0" cellpadding="0" cellspacing="0" width="100%">
-    <tr>
-        <td style="border-bottom: 1px dotted #860E36; padding: 4px" class="titlea" background="Images/Lt_Red_Back.gif" width="460">
-            Accurately and precisely 
-            evaluate your typing speed 
-            and accuracy.
-        </td>
-        <td style="border-bottom: 1px dotted #860E36; padding: 4px" class="titlea" background="Images/Lt_Red_Back.gif" width="190">
-            <p align="right">ALPHA .23
-        </td>
-    </tr>
-    <tr>
-        <td style="padding: 4px" class="bodya" colspan="2">
-            <FORM name="JobOp">
-                <table border="0" cellpadding="5" width="100%">
-                    <tr>
-                        <td>
-                            <table border="0" cellpadding="5" width="100%">
-                                <tr>
-                                    <td align="center" style="border-left: 1px solid #344270; border-right: 2px solid #344270; border-top: 1px solid #344270; border-bottom: 2px solid #344270; padding: 5px; background-color: #CED3E8" background="Images/Blue_Back.gif">
-                                        <b>
-                                            <font face="Arial" size="2" color="#FFFFFF">Net / Gross WPM</font>
-                                        </b>
-                                    </td>
-                                    <td align="center" style="border-left: 1px solid #344270; border-right: 2px solid #344270; border-top: 1px solid #344270; border-bottom: 2px solid #344270; padding: 5px; background-color: #CED3E8" background="Images/Blue_Back.gif">
-                                        <b>
-                                            <font face="Arial" size="2" color="#FFFFFF">Entry Errors</font>
-                                        </b>
-                                    </td>
-                                    <td align="center" style="border-left: 1px solid #344270; border-right: 2px solid #344270; border-top: 1px solid #344270; border-bottom: 2px solid #344270; padding: 5px; background-color: #CED3E8" background="Images/Blue_Back.gif">
-                                        <b>
-                                            <font face="Arial" size="2" color="#FFFFFF">Accuracy</font>
-                                        </b>
-                                    </td>
-                                    <td align="center" style="border-left: 1px solid #344270; border-right: 2px solid #344270; border-top: 1px solid #344270; border-bottom: 2px solid #344270; padding: 5px; background-color: #CED3E8" background="Images/Blue_Back.gif">
-                                        <b>
-                                            <font face="Arial" size="2" color="#FFFFFF">Elapsed / Remaining</font>
-                                        </b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center"><font size="2" face="Arial">
-                                        <div id="stat_wpm">Not Started</div></font>
-                                    </td>
-                                    <td style="border-left: 1px dotted #8794C7; border-right: 1px dotted #8794C7; border-top-width: 1px; border-bottom-width: 1px" align="center">
-                                        <font size="2" face="Arial"><div id="stat_errors">Waiting...</div></font>
-                                    </td>
-                                    <td style="border-left-width: 1px; border-right: 1px dotted #8794C7; border-top-width: 1px; border-bottom-width: 1px" align="center">
-                                        <font size="2" face="Arial"><div id="stat_score">Waiting...</div></font>
-                                    </td>
-                                    <td align="center"><font size="2" face="Arial">
-                                        <div id="stat_timeleft">0:00</div></font>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="border-left-width: 1px; border-right-width: 1px; border-top: 1px solid #344270; border-bottom-width: 1px">
-                            <div id="expectedArea" style="display:block">
-                                <p style="margin-top: 0; margin-bottom: 0">
-                                    <font color="#7A88C0" face="Arial" size="1">
-                                        <textarea name="given" cols=53 rows=10 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-family:Arial; font-size:9pt">Click on the button below to start the typing test.  What you will be expected to type will appear here.</textarea>
-                                    </font>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p align="center" style="margin-top: 0; margin-bottom: 2px">
-                                <input type=button value="&gt;&gt; Start Typing Test &lt;&lt;" name="start" onClick="beginTest()" style="display:block; border-left:1px solid #293358; border-right:2px solid #293358; border-top:1px solid #293358; border-bottom:2px solid #293358; width: 100%; background-color: #9BB892; color:#FFFFFF; background-image:url('Images/Green_Back.gif')">
-                            <p align="center" style="margin-top: 0; margin-bottom: 0">
-                            <input disabled type=button value="&gt;&gt; End Typing Test &lt;&lt;" name="stop" onClick="endTest()" style="display:none; border-left:1px solid #293358; border-right:2px solid #293358; border-top:1px solid #293358; border-bottom:2px solid #293358; width: 100%; background-color: #F05959; color:#FFFFFF; background-image:url('Images/Red_Back.gif')">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="font-family: Arial; font-size: 9pt">
-                            <div id="typeArea" style="display:block">
-                                <table border="0" width="100%" cellspacing="1">
+            <td style="padding: 4px" class="bodya" colspan="2">
+                <FORM name="JobOp">
+                    <table border="0" cellpadding="5" width="100%">
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="5" width="100%">
                                     <tr>
-                                        <td style="border: 1px solid #9CA8D1; background-color: #EAECF4">
-                                            <div align="left">
-                                                <table id="stProg" border="0" width="0%" cellspacing="1">
-                                                    <tr>
-                                                        <td style="border: 1px solid #344270; background-color: #8F9BCB; font-family:Arial; font-size:8pt; color:#FFFFFF" align="right" background="Images/Blue_Back.gif">
-                                                            <div id="thisProg">0%</div>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
+                                        <td align="center" style="border-left: 1px solid #344270; border-right: 2px solid #344270; border-top: 1px solid #344270; border-bottom: 2px solid #344270; padding: 5px; background-color: #CED3E8" background="Images/Blue_Back.gif">
+                                            <b>
+                                    <font face="Arial" size="2" color="#FFFFFF">Net / Gross WPM</font>
+                                    </b>
+                                        </td>
+                                        <td align="center" style="border-left: 1px solid #344270; border-right: 2px solid #344270; border-top: 1px solid #344270; border-bottom: 2px solid #344270; padding: 5px; background-color: #CED3E8" background="Images/Blue_Back.gif">
+                                            <b>
+                                    <font face="Arial" size="2" color="#FFFFFF">Entry Errors</font>
+                                    </b>
+                                        </td>
+                                        <td align="center" style="border-left: 1px solid #344270; border-right: 2px solid #344270; border-top: 1px solid #344270; border-bottom: 2px solid #344270; padding: 5px; background-color: #CED3E8" background="Images/Blue_Back.gif">
+                                            <b>
+                                    <font face="Arial" size="2" color="#FFFFFF">Accuracy</font>
+                                    </b>
+                                        </td>
+                                        <td align="center" style="border-left: 1px solid #344270; border-right: 2px solid #344270; border-top: 1px solid #344270; border-bottom: 2px solid #344270; padding: 5px; background-color: #CED3E8" background="Images/Blue_Back.gif">
+                                            <b>
+                                    <font face="Arial" size="2" color="#FFFFFF">Elapsed / Remaining</font>
+                                    </b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <font size="2" face="Arial">
+                                                <div id="stat_wpm">Not Started</div>
+                                            </font>
+                                        </td>
+                                        <td style="border-left: 1px dotted #8794C7; border-right: 1px dotted #8794C7; border-top-width: 1px; border-bottom-width: 1px" align="center">
+                                            <font size="2" face="Arial">
+                                                <div id="stat_errors">Waiting...</div>
+                                            </font>
+                                        </td>
+                                        <td style="border-left-width: 1px; border-right: 1px dotted #8794C7; border-top-width: 1px; border-bottom-width: 1px" align="center">
+                                            <font size="2" face="Arial">
+                                                <div id="stat_score">Waiting...</div>
+                                            </font>
+                                        </td>
+                                        <td align="center">
+                                            <font size="2" face="Arial">
+                                                <div id="stat_timeleft">0:00</div>
+                                            </font>
                                         </td>
                                     </tr>
                                 </table>
-                                <p style="margin-top: 0; margin-bottom: 0">
-                                    <font color="#7A88C0" face="Arial" size="1">
-                                        <textarea onkeypress="doCheck();" onkeydown="//calcStat()" name="typed" cols=53 rows=10 wrap=on style="width: 100%; border: 1px solid #344270; padding: 2px; font-family:Arial; font-size:9pt">
-                                        </textarea>
-                                    </font>
-                            </div>
-                            <div id="afterAction" style="display:none">
-                            </div>
-                        </td>
-                    </tr>
-                    <script>
-                        randNum = Math.floor((Math.random() * 10)) % intToTestCnt;
-                        strToTestType = strToTest[randNum];
-                        document.JobOp.given.value = strToTestType;
-                        document.JobOp.typed.focus();
-                    </script>
-                </table>
-            </FORM>
-        </td>
-    </tr>
-</table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left-width: 1px; border-right-width: 1px; border-top: 1px solid #344270; border-bottom-width: 1px">
+                                <div id="expectedArea" style="display:block">
+                                    <p style="margin-top: 0; margin-bottom: 0">
+                                        <font color="#7A88C0" face="Arial" size="1">
+                                            <textarea name="given" cols=53 rows=10 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-family:Arial; font-size:9pt">Click on the button below to start the typing test.  What you will be expected to type will appear here.</textarea>
+                                        </font>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p align="center" style="margin-top: 0; margin-bottom: 2px">
+                                    <input type=button value="&gt;&gt; Start Typing Test &lt;&lt;" name="start" onClick="beginTest()" style="display:block; border-left:1px solid #293358; border-right:2px solid #293358; border-top:1px solid #293358; border-bottom:2px solid #293358; width: 100%; background-color: #9BB892; color:#FFFFFF; background-image:url('Images/Green_Back.gif')">
+                                    <p align="center" style="margin-top: 0; margin-bottom: 0">
+                                        <input disabled type=button value="&gt;&gt; End Typing Test &lt;&lt;" name="stop" onClick="endTest()" style="display:none; border-left:1px solid #293358; border-right:2px solid #293358; border-top:1px solid #293358; border-bottom:2px solid #293358; width: 100%; background-color: #F05959; color:#FFFFFF; background-image:url('Images/Red_Back.gif')">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-family: Arial; font-size: 9pt">
+                                <div id="typeArea" style="display:block">
+                                    <table border="0" width="100%" cellspacing="1">
+                                        <tr>
+                                            <td style="border: 1px solid #9CA8D1; background-color: #EAECF4">
+                                                <div align="left">
+                                                    <table id="stProg" border="0" width="0%" cellspacing="1">
+                                                        <tr>
+                                                            <td style="border: 1px solid #344270; background-color: #8F9BCB; font-family:Arial; font-size:8pt; color:#FFFFFF" align="right" background="Images/Blue_Back.gif">
+                                                                <div id="thisProg">0%</div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <p style="margin-top: 0; margin-bottom: 0">
+                                        <font color="#7A88C0" face="Arial" size="1">
+                                            <textarea onkeypress="doCheck();" onkeydown="//calcStat()" name="typed" cols=53 rows=10 wrap=on style="width: 100%; border: 1px solid #344270; padding: 2px; font-family:Arial; font-size:9pt">
+                                 </textarea>
+                                        </font>
+                                </div>
+                                <div id="afterAction" style="display:none">
+                                </div>
+                            </td>
+                        </tr>
+                        <script>
+                            randNum = Math.floor((Math.random() * 10)) % intToTestCnt;
+                            strToTestType = strToTest[randNum];
+                            document.JobOp.given.value = strToTestType;
+                            document.JobOp.typed.focus();
+                        </script>
+                    </table>
+                </FORM>
+            </td>
+        </tr>
+    </table>
+    <!-- End Old Code [TO BE REMOVED] -->
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-16 w3-light-grey">
+        <h4>FOOTER</h4>
+        <p>Powered by <a href="http://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </footer>
+
+    <!-- End page content -->
+    </div>
+
+    <script>
+        // Get the Sidenav
+        var mySidenav = document.getElementById("mySidenav");
+
+        // Get the DIV with overlay effect
+        var overlayBg = document.getElementById("myOverlay");
+
+        // Toggle between showing and hiding the sidenav, and add overlay effect
+        function w3_open() {
+            if (mySidenav.style.display === 'block') {
+                mySidenav.style.display = 'none';
+                overlayBg.style.display = "none";
+            } else {
+                mySidenav.style.display = 'block';
+                overlayBg.style.display = "block";
+            }
+        }
+
+        // Close the sidenav with the close button
+        function w3_close() {
+            mySidenav.style.display = "none";
+            overlayBg.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
