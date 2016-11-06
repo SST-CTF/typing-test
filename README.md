@@ -13,8 +13,9 @@ The best way to test typing speed and accuracy for a user provided string. This 
 
 ### Todo
 - [x] Fix ghost text in entry field
+- [ ] Improve progress bar
 - [ ] Make the GUI look good
-- [ ] Database Implementation
+- [ ] Database implementation
 - [ ] Balance WPM function
 - [ ] Test **Everything**
 
@@ -22,9 +23,11 @@ The best way to test typing speed and accuracy for a user provided string. This 
 ## Footnotes
 ###### Links
 [Link to this GitHub page.](https://github.com/SST-CTF/typing-test)
+
 [**Live demo coming soon!**](https://github.com/SST-CTF/typing-test)
+
 [Link to our CTF (Programming) team / club.](http://sstctf.org)
 ###### Questions?
 If you have any questions, feel free contact us: github@sstctf.org
 ###### Credit
-Otakar (@otakar-sst) and Sterling (@marscat39) from SST are currently working on this project. *More information will be added soon*
+Otakar and Sterling  from SST are currently working on this project. *More information will be added soon*
