@@ -30,10 +30,10 @@
 
     <!-- Overlay effect when opening sidenav on small screens -->
     <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-    
+
     <!-- !PAGE CONTENT! -->
     <div class="w3-main" style="margin-left:10px;margin-top:43px;margin-right:10px;">
-        
+
         <!-- Header -->
         <header class="w3-container" style="padding-top:22px">
             <h5><b><i class="fa fa-dashboard"></i> SST CTF Typing Competition</b></h5>
@@ -46,7 +46,9 @@
                         <h3>Net/Gross WPM</h3>
                     </div>
                     <div class="w3-clear"></div>
-                    <h4><div id="stat_wpm">Not Started</div></h4>
+                    <h4>
+                        <div id="stat_wpm">Not Started</div>
+                    </h4>
                 </div>
             </div>
             <div class="w3-quarter">
@@ -56,7 +58,9 @@
                         <h3>Entry Errors</h3>
                     </div>
                     <div class="w3-clear"></div>
-                    <h4><div id="stat_errors">Waiting...</div></h4>
+                    <h4>
+                        <div id="stat_errors">Waiting...</div>
+                    </h4>
                 </div>
             </div>
             <div class="w3-quarter">
@@ -66,7 +70,9 @@
                         <h3>Accuracy</h3>
                     </div>
                     <div class="w3-clear"></div>
-                    <h4><div id="stat_score">Waiting...</div></h4>
+                    <h4>
+                        <div id="stat_score">Waiting...</div>
+                    </h4>
                 </div>
             </div>
             <div class="w3-quarter">
@@ -76,7 +82,9 @@
                         <h3>Remaining Time</h3>
                     </div>
                     <div class="w3-clear"></div>
-                    <h4><div id="stat_timeleft">0:00</div></h4>
+                    <h4>
+                        <div id="stat_timeleft">0:00</div>
+                    </h4>
                 </div>
             </div>
         </div>
@@ -127,7 +135,7 @@
                                         <p style="margin-top: 0; margin-bottom: 0">
                                             <font color="#7A88C0" face="Arial" size="1">
                                                 <textarea onkeypress="doCheck();" onkeydown="//calcStat()" name="typed" cols=53 rows=10 wrap=on style="width: 100%; border: 1px solid #344270; padding: 2px; font-family:Arial; font-size:9pt">
-                                 </textarea>
+</textarea>
                                             </font>
                                     </div>
                                     <div id="afterAction" style="display:none">
@@ -146,7 +154,7 @@
             </tr>
         </table>
         <!-- End Old Code -->
-        
+
         <!-- Footer -->
         <footer class="w3-container w3-padding-16 w3-light-grey">
             <h4>FOOTER</h4>
@@ -155,7 +163,7 @@
             <input disabled id="printB" onclick="window.print();" type="button" value="Print Results" name="printB">
         </footer>
         <!-- End page content -->
-        
+
         <!-- These scripts are useful if we need to implement navigation in the future. For now deprecated. -->
     </div>
     <script>
