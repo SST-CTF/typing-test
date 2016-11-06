@@ -24,7 +24,7 @@ The best way to test typing speed and accuracy for a user provided string. This 
 ###### Links
 [Link to this GitHub page.](https://github.com/SST-CTF/typing-test)
 
-[**Live demo coming soon!**](https://github.com/SST-CTF/typing-test)
+[**Live demo coming soon!**](https://sst-ctf.github.io/typing-test/)
 
 [Link to our CTF (Programming) team / club.](http://sstctf.org)
 ###### Questions?
