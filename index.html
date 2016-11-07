@@ -20,68 +20,68 @@
     }
 </style>
 
-<body class="w3-light-grey">
+<body class="sst-light-grey">
 
     <!-- Top container -->
-    <div class="w3-container w3-top w3-black w3-large w3-padding" style="z-index:4">
-        <button class="w3-btn w3-hide-large w3-padding-0 w3-hover-text-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-        <span class="w3-right">SST CTF</span>
+    <div class="sst-container sst-top sst-black sst-large sst-padding" style="z-index:4">
+        <button class="sst-btn sst-hide-large sst-padding-0 sst-hover-text-grey" onclick="sst_open();"><i class="fa fa-bars"></i>  Menu</button>
+        <span class="sst-right">SST CTF</span>
     </div>
 
     <!-- Overlay effect when opening sidenav on small screens -->
-    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+    <div class="sst-overlay sst-hide-large sst-animate-opacity" onclick="sst_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
     <!-- !PAGE CONTENT! -->
-    <div class="w3-main" style="margin-left:10px;margin-top:43px;margin-right:10px;">
+    <div class="sst-main" style="margin-left:10px;margin-top:43px;margin-right:10px;">
 
         <!-- Header -->
-        <header class="w3-container" style="padding-top:22px">
+        <header class="sst-container" style="padding-top:22px">
             <h5><b><i class="fa fa-dashboard"></i> SST CTF Typing Competition</b></h5>
         </header>
-        <div class="w3-row-padding w3-margin-bottom">
-            <div class="w3-quarter">
-                <div class="w3-container w3-blue w3-padding-16">
-                    <div class="w3-left"><i class="fa fa-calculator w3-xxxlarge"></i></div>
-                    <div class="w3-right">
+        <div class="sst-row-padding sst-margin-bottom">
+            <div class="sst-quarter">
+                <div class="sst-container sst-blue sst-padding-16">
+                    <div class="sst-left"><i class="fa fa-calculator sst-xxxlarge"></i></div>
+                    <div class="sst-right">
                         <h3>Net/Gross WPM</h3>
                     </div>
-                    <div class="w3-clear"></div>
+                    <div class="sst-clear"></div>
                     <h4>
                         <div id="stat_wpm">Not Started</div>
                     </h4>
                 </div>
             </div>
-            <div class="w3-quarter">
-                <div class="w3-container w3-red w3-padding-16">
-                    <div class="w3-left"><i class="fa fa-exclamation-triangle w3-xxxlarge"></i></div>
-                    <div class="w3-right">
+            <div class="sst-quarter">
+                <div class="sst-container sst-red sst-padding-16">
+                    <div class="sst-left"><i class="fa fa-exclamation-triangle sst-xxxlarge"></i></div>
+                    <div class="sst-right">
                         <h3>Entry Errors</h3>
                     </div>
-                    <div class="w3-clear"></div>
+                    <div class="sst-clear"></div>
                     <h4>
                         <div id="stat_errors">Waiting...</div>
                     </h4>
                 </div>
             </div>
-            <div class="w3-quarter">
-                <div class="w3-container w3-teal w3-padding-16">
-                    <div class="w3-left"><i class="fa fa-bullseye w3-xxxlarge"></i></div>
-                    <div class="w3-right">
+            <div class="sst-quarter">
+                <div class="sst-container sst-teal sst-padding-16">
+                    <div class="sst-left"><i class="fa fa-bullseye sst-xxxlarge"></i></div>
+                    <div class="sst-right">
                         <h3>Accuracy</h3>
                     </div>
-                    <div class="w3-clear"></div>
+                    <div class="sst-clear"></div>
                     <h4>
                         <div id="stat_score">Waiting...</div>
                     </h4>
                 </div>
             </div>
-            <div class="w3-quarter">
-                <div class="w3-container w3-orange w3-text-white w3-padding-16">
-                    <div class="w3-left"><i class="fa fa-clock-o w3-xxxlarge"></i></div>
-                    <div class="w3-right">
+            <div class="sst-quarter">
+                <div class="sst-container sst-orange sst-text-white sst-padding-16">
+                    <div class="sst-left"><i class="fa fa-clock-o sst-xxxlarge"></i></div>
+                    <div class="sst-right">
                         <h3>Remaining Time</h3>
                     </div>
-                    <div class="w3-clear"></div>
+                    <div class="sst-clear"></div>
                     <h4>
                         <div id="stat_timeleft">0:00</div>
                     </h4>
@@ -114,24 +114,26 @@
                                             <input disabled type=button value="&gt;&gt; End Typing Test &lt;&lt;" name="stop" onClick="endTest()" style="display:none; border-left:1px solid #293358; border-right:2px solid #293358; border-top:1px solid #293358; border-bottom:2px solid #293358; width: 100%; background-color: #F05959; color:#FFFFFF; background-image:url('Images/Red_Back.gif')">
                                 </td>
                             </tr>
+
                             <tr>
-                                <td style="font-family: Arial; font-size: 9pt">
+                                <td>
                                     <div id="typeArea" style="display:block">
                                         <table border="0" width="100%" cellspacing="1">
                                             <tr>
                                                 <td style="border: 1px solid #9CA8D1; background-color: #EAECF4">
                                                     <div align="left">
                                                         <table id="stProg" border="0" width="0%" cellspacing="1">
-                                                            <tr>
-                                                                <td style="border: 1px solid #344270; background-color: #8F9BCB; font-family:Arial; font-size:8pt; color:#FFFFFF" align="right" background="Images/Blue_Back.gif">
-                                                                    <div id="thisProg">0%</div>
-                                                                </td>
-                                                            </tr>
+                                                       <div class="sst-progress-container sst-grey">
+                                                <div id="myBar" class="sst-progressbar sst-green" style="width:55%">
+                                                    <div class="sst-center sst-text-white" id="thisProg">0%</div>
+                                                </div>
+                                        </div>
                                                         </table>
                                                     </div>
                                                 </td>
                                             </tr>
                                         </table>
+                                            
                                         <p style="margin-top: 0; margin-bottom: 0">
                                             <font color="#7A88C0" face="Arial" size="1">
                                                 <textarea onkeypress="doCheck();" onkeydown="//calcStat()" name="typed" cols=53 rows=10 wrap=on style="width: 100%; border: 1px solid #344270; padding: 2px; font-family:Arial; font-size:9pt">
@@ -156,7 +158,7 @@
         <!-- End Old Code -->
 
         <!-- Footer -->
-        <footer class="w3-container w3-padding-16 w3-light-grey">
+        <footer class="sst-container sst-padding-16 sst-light-grey">
             <h4>FOOTER</h4>
             <p>Powered by <a href="http://sstctf.org" target="_blank">SST CTF</a></p>
             <br>
@@ -174,7 +176,7 @@
         var overlayBg = document.getElementById("myOverlay");
 
         // Toggle between showing and hiding the sidenav, and add overlay effect
-        function w3_open() {
+        function sst_open() {
             if (mySidenav.style.display === 'block') {
                 mySidenav.style.display = 'none';
                 overlayBg.style.display = "none";
@@ -185,7 +187,7 @@
         }
 
         // Close the sidenav with the close button
-        function w3_close() {
+        function sst_close() {
             mySidenav.style.display = "none";
             overlayBg.style.display = "none";
         }
