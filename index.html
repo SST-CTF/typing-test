@@ -100,30 +100,23 @@
                                 <td style="border-left-width: 1px; border-right-width: 1px; border-top: 1px solid #344270; border-bottom-width: 1px">
                                     <div id="expectedArea" style="display:block">
                                         <p style="margin-top: 0; margin-bottom: 0">
-                                            <font color="#7A88C0" face="Arial" size="1">
-                                                <textarea name="given" cols=53 rows=10 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-family:Arial; font-size:9pt">Click on the button below to start the typing test.  What you will be expected to type will appear here.</textarea>
-                                            </font>
+                                                <textarea name="given" cols=53 rows=10 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-size:9pt">If you see this something broke.</textarea>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                        <input name="start" onClick="beginTest()">
-                                        <input name="stop" onClick="endTest()" >
-                                </td>
-                            </tr>
-                            <table id="stProg" border="0" width="0%" cellspacing="1">
-                                                       <div class="sst-progress-container sst-grey">
-                                                <div id="myBar" class="sst-progressbar sst-green" style="width:55%">
-                                                    <div class="sst-center sst-text-white" id="thisProg">0%</div>
-                                                </div>
+                                <input name="start" onType="beginTest()">
+                                        <input name="stop" onEnd="endTest()" >
+                            <table id="stProg">
+                                                <div id="myBar">
+                                                <div id="thisProg"></div>
                                         </div>
                             </table>
                             
                             <tr>
-                                <td>
-                                    <div id="typeArea">
-                                                <textarea onkeypress="doCheck();" onkeydown="//calcStat()" name="typed" cols=53 rows=10 wrap=on style="width: 100%; border: 1px solid #344270; padding: 2px; font-family:Arial; font-size:9pt"></textarea>
+                                <td style="border-left-width: 1px; border-right-width: 1px; border-top: 1px solid #344270; border-bottom-width: 1px">
+                                    <div id="typeArea" style="display:block">
+                                        <p style="margin-top: 0; margin-bottom: 0">
+                                                <textarea onkeypress="doCheck();" onkeydown="//calcStat()" name="typed" cols=53 rows=10 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-size:9pt"></textarea>
                                     </div>
                                     <div id="afterAction" style="display:none"></div>
                                 </td>
@@ -141,6 +134,11 @@
         </table>
         <!-- End Old Code -->
 
+        <!-- Submit Results to Database -->
+        <form action="data-submit.js">
+            <input type="submit" value="Submit">
+        </form>
+        
         <!-- Footer -->
         <footer class="sst-container sst-padding-16 sst-light-grey">
             <h4>FOOTER</h4>
