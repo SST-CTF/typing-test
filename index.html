@@ -93,30 +93,27 @@
         <!-- Begin Old Code -->
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <tr>
-                <td style="padding: 4px" class="bodya" colspan="2">
+                <td style="padding: 10px" class="bodya" colspan="2">
                     <FORM name="JobOp">
                         <table border="0" cellpadding="5" width="100%">
-                            <tr>
-                                <td style="border-left-width: 1px; border-right-width: 1px; border-top: 1px solid #344270; border-bottom-width: 1px">
                                     <div id="expectedArea" style="display:block">
                                         <p style="margin-top: 0; margin-bottom: 0">
                                                 <textarea name="given" cols=53 rows=10 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-size:9pt">If you see this something broke.</textarea>
                                     </div>
-                                </td>
-                            </tr>
-                                <input name="start" onType="beginTest()">
-                                        <input name="stop" onEnd="endTest()" >
-                            <table id="stProg">
-                                                <div id="myBar">
-                                                <div id="thisProg"></div>
+
+                                <input type="hidden" name="start" onType="beginTest()">
+                                <input type="hidden" name="stop" onEnd="endTest()" >
+                            <table type="hidden" id="stProg">
+                                                <div type="hidden" id="myBar">
+                                                <div type="hidden" id="thisProg"></div>
                                         </div>
                             </table>
                             
                             <tr>
-                                <td style="border-left-width: 1px; border-right-width: 1px; border-top: 1px solid #344270; border-bottom-width: 1px">
+                                <td style="padding: 10px" class="bodya" colspan="2">
                                     <div id="typeArea" style="display:block">
                                         <p style="margin-top: 0; margin-bottom: 0">
-                                                <textarea onkeypress="doCheck();" onkeydown="//calcStat()" name="typed" cols=53 rows=10 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-size:9pt"></textarea>
+                                                <textarea type="hidden" onkeypress="doCheck();" onkeydown="//calcStat()" name="typed" cols=53 rows=10 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-size:9pt"></textarea>
                                     </div>
                                     <div id="afterAction" style="display:none"></div>
                                 </td>

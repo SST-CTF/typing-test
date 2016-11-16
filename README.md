@@ -13,7 +13,7 @@ The best way to test typing speed and accuracy for a user provided string. This 
 
 ### Todo
 - [x] Fix ghost text in entry field
-- [ ] Improve progress bar
+- [x] Improve progress bar
 - [ ] Make the GUI look good
 - [ ] Database implementation
 - [ ] Balance WPM function
