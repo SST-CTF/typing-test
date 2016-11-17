@@ -25,7 +25,7 @@
     <!-- Top container -->
     <div class="sst-container sst-top sst-black sst-large sst-padding" style="z-index:4">
         <button class="sst-btn sst-hide-large sst-padding-0 sst-hover-text-grey" onclick="sst_open();"><i class="fa fa-bars"></i>  Menu</button>
-        <span class="sst-right">SST CTF</span>
+        <span class="sst-right"><a href="http://sstctf.org" style="text-decoration: none">SST CTF</a></span>
     </div>
 
     <!-- Overlay effect when opening sidenav on small screens -->
@@ -93,37 +93,26 @@
         <!-- Begin Old Code -->
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <tr>
-                <td style="padding: 4px" class="bodya" colspan="2">
+                <td style="padding: 10px" class="bodya" colspan="2">
                     <FORM name="JobOp">
                         <table border="0" cellpadding="5" width="100%">
-                            <tr>
-                                <td style="border-left-width: 1px; border-right-width: 1px; border-top: 1px solid #344270; border-bottom-width: 1px">
                                     <div id="expectedArea" style="display:block">
                                         <p style="margin-top: 0; margin-bottom: 0">
-                                            <font color="#7A88C0" face="Arial" size="1">
-                                                <textarea name="given" cols=53 rows=10 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-family:Arial; font-size:9pt">Click on the button below to start the typing test.  What you will be expected to type will appear here.</textarea>
-                                            </font>
+                                                <textarea name="given" cols=53 rows=12 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-size:12pt">If you see this something broke.</textarea>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                        <input name="start" onClick="beginTest()">
-                                        <input name="stop" onClick="endTest()" >
-                                </td>
-                            </tr>
-                            <table id="stProg" border="0" width="0%" cellspacing="1">
-                                                       <div class="sst-progress-container sst-grey">
-                                                <div id="myBar" class="sst-progressbar sst-green" style="width:100%">
-                                                    <div class="sst-center sst-text-white" id="thisProg">0%</div>
+                                <input style="display:none" type="hidden" name="start" onType="beginTest()">
+                                <input style="display:none" type="hidden" name="stop" onEnd="endTest()" >
+                            <table type="hidden" id="stProg" style="display:none">
+                                                <div type="hidden" id="myBar" style="display:none">
+                                                <div type="hidden" id="thisProg" style="display:none"></div>
                                                 </div>
-                                        </div>
                             </table>
                             
                             <tr>
-                                <td>
-                                    <div id="typeArea">
-                                                <textarea onkeypress="doCheck();" onkeydown="//calcStat()" name="typed" cols=53 rows=10 wrap=on style="width: 100%; border: 1px solid #344270; padding: 2px; font-family:Arial; font-size:9pt"></textarea>
+                                <td style="padding: 10px" class="bodya" colspan="2">
+                                    <div id="typeArea" style="display:block">
+                                        <p style="margin-top: 0; margin-bottom: 0">
+                                                <textarea type="hidden" onkeypress="doCheck();" onkeydown="//calcStat()" name="typed" cols=53 rows=12 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-size:12pt"></textarea>
                                     </div>
                                     <div id="afterAction" style="display:none"></div>
                                 </td>
@@ -141,10 +130,18 @@
         </table>
         <!-- End Old Code -->
 
+        <!-- Submit Results to Database -->
+        <div align="center">
+        <form align: center; action="data-submit.js">
+            <input class="sst-btn" More Countries type="submit" value="Submit">
+        </form>
+        </div>
+        
         <!-- Footer -->
         <footer class="sst-container sst-padding-16 sst-light-grey">
             <h4>FOOTER</h4>
             <p>Powered by <a href="http://sstctf.org" target="_blank">SST CTF</a></p>
+            <p>Find on GitHub <a href="http://sstctf.org" target="_blank">SST CTF</a></p>
             <br>
             <input disabled id="printB" onclick="window.print();" type="button" value="Print Results" name="printB">
         </footer>
