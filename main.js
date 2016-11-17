@@ -76,7 +76,7 @@ function beginTest() {
     calcStat();
 
     //Initialize the testing objects by setting the values of the buttons, what to type, and what is typed
-    document.JobOp.start.value = "-- Typing Test Started --";
+    //document.JobOp.start.value = "-- Typing Test Started --";
     document.JobOp.start.disabled = true;
     document.JobOp.given.value = strToTestType;
     document.JobOp.typed.value = "";
@@ -112,8 +112,8 @@ function endTest() {
     wpmType = Math.round(((document.JobOp.typed.value.replace(/  /g, " ").split(" ").length) / totalTime) * 60)
 
     //Set the start test button label and enabled state
-    document.JobOp.start.value = ">> Re-Start Typing Test <<";
-    document.JobOp.start.disabled = false;
+    //document.JobOp.start.value = ">> Re-Start Typing Test <<";
+    //document.JobOp.start.disabled = false;
 
     //Flip the starting and stopping buttons around since the test is complete
     document.JobOp.stop.style.display = "none";
