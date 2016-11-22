@@ -39,7 +39,7 @@ function readTextFile(file, arrayData)
     return arrayData;
 }
 
-readTextFile("file:///Users/Otakar/Documents/GitHub/typing-test/js/file.txt");
+readTextFile("file.txt");
 
 var strToTestType = "";
 
