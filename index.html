@@ -1,4 +1,4 @@
-<script src="main.js"></script>
+<script src="./js/main.js"></script>
 
 <!DOCTYPE html>
 
@@ -31,7 +31,7 @@
     <!-- Overlay effect when opening sidenav on small screens -->
     <div class="sst-overlay sst-hide-large sst-animate-opacity" onclick="sst_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-    <!-- !PAGE CONTENT! -->
+    <!-- PAGE CONTENT -->
     <div class="sst-main" style="margin-left:10px;margin-top:43px;margin-right:10px;">
 
         <!-- Header -->
@@ -98,7 +98,7 @@
                         <table border="0" cellpadding="5" width="100%">
                                     <div id="expectedArea" style="display:block">
                                         <p style="margin-top: 0; margin-bottom: 0">
-                                                <textarea name="given" cols=53 rows=12 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-size:12pt">If you see this something broke.</textarea>
+                                                <textarea name="given" cols=53 rows=12 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-size:12pt" onpaste="return false;">If you see this something broke.</textarea>
                                     </div>
                                 <input style="display:none" type="hidden" name="start" onType="beginTest()">
                                 <input style="display:none" type="hidden" name="stop" onEnd="endTest()" >
@@ -112,7 +112,7 @@
                                 <td style="padding: 10px" class="bodya" colspan="2">
                                     <div id="typeArea" style="display:block">
                                         <p style="margin-top: 0; margin-bottom: 0">
-                                                <textarea type="hidden" onkeypress="doCheck();" onkeydown="//calcStat()" name="typed" cols=53 rows=12 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-size:12pt"></textarea>
+                                                <textarea type="hidden" onkeypress="doCheck();" onkeydown="//calcStat()" name="typed" cols=53 rows=12 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-size:12pt" onpaste="return false;"></textarea>
                                     </div>
                                     <div id="afterAction" style="display:none"></div>
                                 </td>
