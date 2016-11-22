@@ -2,15 +2,6 @@
 // TypingTest - JavaScript Application
 // Copyright 2015,  <Otakar Andrysek>
 // Copyright 2016-2017,  <SST CTF>
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License at <http://www.gnu.org/licenses/> for
-// more details.
 // Usage: launch locally or remotely on a client
 // Revision history:
 // 2015-02-15 Created by first build ALPHA .1
@@ -18,6 +9,7 @@
 // 2015-02-16 Bug-Fixed ALPHA .23
 // 2016-11-03 Cleaned up code again
 // ---------------------------------------------------------------------------
+
 //Holds whether or not we have already started the first typing test or now
 //	True = The test has already started
 //	False = The test hasn't started yet
@@ -26,20 +18,28 @@ var hasStarted = false;
 //strToTest is an array object that holds various strings to be used as the base typing test
 //	- If you update the array, be sure to update the intToTestCnt with the number of ACTIVE testing strings
 var intToTestCnt = 1;
+var strToTest = new Array("ERROR 2");
 
-// In the future this string should be stored in a seperate text file
+function readTextFile(file, arrayData)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                strToTest = new Array(allText);
+            }
+        }
+    }
+    rawFile.send(null);
+    return arrayData;
+}
 
-jQuery.get("file.txt", undefined, function(data) {
-    alert(data);
-}, "html").done(function() {
-    alert("second success");
-}).fail(function(jqXHR, textStatus) {
-    alert(textStatus);
-}).always(function() {
-    alert("finished");
-});
-
-var strToTest = new Array(contents);
+readTextFile("file:///Users/Otakar/Documents/GitHub/typing-test/js/file.txt");
 
 var strToTestType = "";
 
