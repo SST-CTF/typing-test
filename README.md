@@ -1,5 +1,5 @@
 # Typing Test
-![GIF of typing test](https://github.com/SST-CTF/typing-test/blob/master/Documentation/Nov-22-2016%16-12-36?raw=true)
+![GIF of typing test](https://github.com/SST-CTF/typing-test/blob/master/docs/Nov-22-2016%2016-12-36.gif?raw=true)
 #### [Live demo ](https://sst-ctf.github.io/typing-test/)
 ## Description
 The best way to test typing speed and accuracy for a user provided string. This JS + HTML combo can be run server or client side.
