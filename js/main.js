@@ -356,10 +356,38 @@ function calcStat() {
     } catch (e) {};
 }
 
-//Simply does a check on focus to determine if the test has started
+// Takes name from prompt, ready to store into MYSQL
+function myFunction() 
+{
+    var person = prompt("Please enter your name", "");
+    // Profanity Filter (if there is a better way to do this LMK)
+    if (
+        person.search("ota") == - 1 && 
+        person.search("Ota") == - 1 && 
+        person.search("fruhwirth") == - 1 && 
+        person.search("Fruhwirth") == - 1 && 
+        person.search("morales") == - 1 && 
+        person.search("Morales") == - 1 && 
+        person.search("cena") == - 1 && 
+        person.search("Cena") == - 1
+       ) 
+    {
+        alert("Invalid option");
+    }
+    
+    else
+    {
+        // SQL
+        // MAGIC
+        // GOES
+        // HERE
+    }
+}
+
+// Simply does a check on focus to determine if the test has started
 function doCheck() {
     if (hasStarted == false) {
-        //The test has not started, but the user is typing already -- maybe we should start?
-        beginTest(); //Yes, we should -- consider it done!
+        // The test has not started, but the user is typing already -- maybe we should start?
+        beginTest(); // Yes, we should -- consider it done!
     }
 }

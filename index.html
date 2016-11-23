@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 <html>
-<title>SST CTF Typing Competition</title>
+<title>SST Typing Competition</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/stylesheet.css">
 <link rel="stylesheet" href="fonts/raleway.css">
@@ -24,7 +24,6 @@
 
     <!-- Top container -->
     <div class="sst-container sst-top sst-black sst-large sst-padding" style="z-index:4">
-        <button class="sst-btn sst-hide-large sst-padding-0 sst-hover-text-grey" onclick="sst_open();"><i class="fa fa-bars"></i>  Menu</button>
         <span class="sst-right"><a href="http://sstctf.org" style="text-decoration: none">SST CTF</a></span>
     </div>
 
@@ -35,8 +34,8 @@
     <div class="sst-main" style="margin-left:10px;margin-top:43px;margin-right:10px;">
 
         <!-- Header -->
-        <header class="sst-container" style="padding-top:22px">
-            <h5><b><i class="fa fa-dashboard"></i> SST CTF Typing Competition</b></h5>
+        <header class="sst-container" style="padding-top:6px">
+            <h5><b><i class="fa fa-dashboard"></i> 2017 SST Typing Competition</b></h5>
         </header>
         <div class="sst-row-padding sst-margin-bottom">
             <div class="sst-quarter">
@@ -132,16 +131,17 @@
 
         <!-- Submit Results to Database -->
         <div align="center">
-        <form align: center; action="data-submit.js">
-            <input class="sst-btn" More Countries type="submit" value="Submit">
-        </form>
+            <form align: center;>
+                <input onclick="myFunction()" class="sst-btn" More Countries type="submit" value="Submit to Database">
+            </form>
         </div>
         
         <!-- Footer -->
         <footer class="sst-container sst-padding-16 sst-light-grey">
+            <br>
             <h4>FOOTER</h4>
             <p>Powered by <a href="http://sstctf.org" target="_blank">SST CTF</a></p>
-            <p>Find on GitHub <a href="http://sstctf.org" target="_blank">SST CTF</a></p>
+            <p>Find project on <a href="http://sstctf.org" target="_blank">GitHub</a></p>
             <br>
             <input disabled id="printB" onclick="window.print();" type="button" value="Print Results" name="printB">
         </footer>
