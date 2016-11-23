@@ -1,5 +1,6 @@
 # Typing Test
-![GIF of typing test](https://github.com/SST-CTF/typing-test/blob/master/Documentation/Nov-03-2016%2013-08-45.gif?raw=true)
+![GIF of typing test](https://github.com/SST-CTF/typing-test/blob/master/Documentation/Nov-22-2016%16-12-36?raw=true)
+#### [Live demo ](https://sst-ctf.github.io/typing-test/)
 ## Description
 The best way to test typing speed and accuracy for a user provided string. This JS + HTML combo can be run server or client side.
 ### Features
@@ -14,7 +15,7 @@ The best way to test typing speed and accuracy for a user provided string. This 
 ### Todo
 - [x] Fix ghost text in entry field
 - [x] Improve progress bar
-- [ ] Make the GUI look good
+- [x] Make the GUI look good
 - [ ] Database implementation
 - [ ] Balance WPM function
 - [ ] Test **Everything**
@@ -24,10 +25,10 @@ The best way to test typing speed and accuracy for a user provided string. This 
 ###### Links
 [Link to this GitHub page.](https://github.com/SST-CTF/typing-test)
 
-[**Live demo coming soon!**](https://sst-ctf.github.io/typing-test/)
+[**Live demo **](https://sst-ctf.github.io/typing-test/)
 
 [Link to our CTF (Programming) team / club.](http://sstctf.org)
 ###### Questions?
 If you have any questions, feel free contact us: github@sstctf.org
 ###### Credit
-Otakar and Sterling  from SST are currently working on this project. *More information will be added soon*
+Otakar, Sterling and Tamir from SST are currently working on this project. *More information will be added soon*
