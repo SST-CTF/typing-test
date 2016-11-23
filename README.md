@@ -30,4 +30,4 @@ The best way to test typing speed and accuracy for a user provided string. This 
 ###### Questions?
 If you have any questions, feel free contact us: github@sstctf.org
 ###### Credit
-Otakar and Sterling  from SST are currently working on this project. *More information will be added soon*
+Otakar and Sterling, as well as Tamir & Andrew from SST are currently working on this project. *More information will be added soon*
