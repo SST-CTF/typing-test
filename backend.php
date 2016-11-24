@@ -34,11 +34,10 @@
         {
             // Check if not duplicate name
             $sql = "SELECT name FROM test WHERE name = ('$person')";
-            
             if ($conn->query($sql) === FALSE) {
                 $err = True;
             }
-            $sql = "INSERT INTO verification (email, hash) VALUES('$escapedemail', '$hash')";
+            $sql = "INSERT INTO test (name) VALUES('$person')";
             if ($conn->query($sql) === FALSE) {
                 $err = True;
             }
