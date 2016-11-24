@@ -377,7 +377,7 @@ function myFunction()
         $.ajax(
         {
             data: 'name=' + person,
-            url: 'backend.php',
+            url: 'http://sstctf.org/typing-test/backend.php',
             method: 'POST', // or GET
             success: function(msg) 
             {

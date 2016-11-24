@@ -1,4 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Heading</h1>
+
+<p>My first paragraph.</p>
+    
+    
 <?php
+
+    $message = "PHP LOADED";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+    
     // Escape user input
     $person = mysql_real_escape_string(html_entities($_POST['person']));
 
@@ -41,5 +54,9 @@
             if ($conn->query($sql) === FALSE) {
                 $err = True;
             }
+        }
     }
 ?>
+
+    </body>
+</html>
