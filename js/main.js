@@ -39,7 +39,8 @@ function readTextFile(file, arrayData)
     return arrayData;
 }
 
-readTextFile("file.txt");
+// File to read the testing string from
+readTextFile("content.txt");
 
 var strToTestType = "";
 
@@ -372,15 +373,22 @@ function myFunction()
         person.search("Cena") == - 1
        ) 
     {
-        alert("Invalid option");
+        // TEMPLATE CODE TO BE UPDATED
+        $.ajax(
+        {
+            data: 'orderid=' + your_order_id,
+            url: 'url_where_php_is_located.php',
+            method: 'POST', // or GET
+            success: function(msg) 
+            {
+                alert(msg);
+            }
+        });
     }
     
     else
     {
-        // SQL
-        // MAGIC
-        // GOES
-        // HERE
+        alert("Invalid option");
     }
 }
 
