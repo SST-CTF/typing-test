@@ -376,8 +376,8 @@ function myFunction()
         // TEMPLATE CODE TO BE UPDATED
         $.ajax(
         {
-            data: 'orderid=' + your_order_id,
-            url: 'url_where_php_is_located.php',
+            data: 'name=' + person,
+            url: 'backend.php',
             method: 'POST', // or GET
             success: function(msg) 
             {
