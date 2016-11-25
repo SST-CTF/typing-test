@@ -373,9 +373,10 @@ function myFunction()
         person.search("Cena") == - 1
        ) 
     {
-        // TEMPLATE CODE TO BE UPDATED
+        alert(person);
         $.ajax(
         {
+            //alert(person);
             data: 'name=' + person,
             url: 'http://sstctf.org/typing-test/backend.php',
             method: 'POST', // or GET

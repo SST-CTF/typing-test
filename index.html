@@ -1,4 +1,6 @@
 <script src="./js/main.js"></script>
+<script src="./js/jquery-3.1.1.min.js"></script>
+<script src="./js/jquery-3.1.1.min.js"></script>
 
 <!DOCTYPE html>
 
@@ -132,7 +134,7 @@
         <!-- Submit Results to Database -->
         <div align="center">
             <form align: center;>
-                <input onclick="myFunction()" class="sst-btn" More Countries type="submit" value="Submit to Database">
+                <input onclick="$(this).saveData('msg');" class="sst-btn" More Countries type="submit" value="Submit to Database">
             </form>
         </div>
         
