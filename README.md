@@ -1,4 +1,6 @@
 # Typing Test
+[![Code Climate](https://codeclimate.com/github/SST-CTF/typing-test/badges/gpa.svg)](https://codeclimate.com/github/SST-CTF/typing-test)
+[![Issue Count](https://codeclimate.com/github/SST-CTF/typing-test/badges/issue_count.svg)](https://codeclimate.com/github/SST-CTF/typing-test)
 ![GIF of typing test](https://github.com/SST-CTF/typing-test/blob/master/docs/Nov-22-2016%2016-12-36.gif?raw=true)
 #### [Live demo ](https://sst-ctf.github.io/typing-test/)
 ## Description
