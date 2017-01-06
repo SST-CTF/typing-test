@@ -1374,3 +1374,7 @@ ul.sst-ul li:last-child{
 	box-shadow:none!important;
 	background-color:transparent!important
 }
+/* Colors */
+.sst-amber,.sst-hover-amber:hover{
+        color:#000!important;
+}
