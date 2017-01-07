@@ -94,7 +94,7 @@ button,select{
 	text-transform:none
 }
  button,html [type=button],[type=reset],[type=submit]{
-	-webkit-appearance:button
+	-webkit-appearance:button;
 	-moz-appearance:button
 }
  button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner{
@@ -374,8 +374,8 @@ ul.sst-ul li:last-child{
 }
  .sst-btn,.sst-btn-floating,.sst-dropnav a,.sst-btn-floating-large,.sst-btn-block,.sst-hover-shadow,.sst-hover-opacity,.sst-hover-opacity-off,.sst-hover-sepia,.sst-hover-grayscale,.sst-hover-greyscale, .sst-navbar a,.sst-sidenav a,.sst-pagination li a,.sst-hoverable tbody tr,.sst-hoverable li,.sst-accordion-content a,.sst-dropdown-content a,.sst-dropdown-click:hover,.sst-dropdown-hover:hover,.sst-opennav,.sst-closenav,.sst-closebtn, .sst-hover-amber,.sst-hover-aqua,.sst-hover-blue,.sst-hover-light-blue,.sst-hover-brown,.sst-hover-cyan,.sst-hover-blue-grey,.sst-hover-green,.sst-hover-light-green,.sst-hover-indigo,.sst-hover-khaki,.sst-hover-lime,.sst-hover-orange,.sst-hover-deep-orange,.sst-hover-pink, .sst-hover-purple,.sst-hover-deep-purple,.sst-hover-red,.sst-hover-sand,.sst-hover-teal,.sst-hover-yellow,.sst-hover-white,.sst-hover-black,.sst-hover-grey,.sst-hover-light-grey,.sst-hover-dark-grey,.sst-hover-text-amber,.sst-hover-text-aqua,.sst-hover-text-blue,.sst-hover-text-light-blue, .sst-hover-text-brown,.sst-hover-text-cyan,.sst-hover-text-blue-grey,.sst-hover-text-green,.sst-hover-text-light-green,.sst-hover-text-indigo,.sst-hover-text-khaki,.sst-hover-text-lime,.sst-hover-text-orange,.sst-hover-text-deep-orange,.sst-hover-text-pink,.sst-hover-text-purple, .sst-hover-text-deep-purple,.sst-hover-text-red,.sst-hover-text-sand,.sst-hover-text-teal,.sst-hover-text-yellow,.sst-hover-text-white,.sst-hover-text-black,.sst-hover-text-grey,.sst-hover-text-light-grey,.sst-hover-text-dark-grey {
 	-webkit-transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s,filter 0.3s;
-	-moz-transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s,filter 0.3s
-	-o-transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s,filter 0.3s
+	-moz-transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s,filter 0.3s;
+	-o-transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s,filter 0.3s;
 }
  .sst-ripple:active{
 	opacity:0.5
@@ -1311,8 +1311,8 @@ ul.sst-ul li:last-child{
 }
  .sst-animate-input{
 	-webkit-transition:width 0.4s ease-in-out;
-	-o-transition:width 0.4s ease-in-out
-	-moz-transition:width 0.4s ease-in-out
+	-o-transition:width 0.4s ease-in-out;
+	-moz-transition:width 0.4s ease-in-out;
 }
 .sst-animate-input:focus{
 	width:100%!important
