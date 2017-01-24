@@ -28,7 +28,7 @@ function readTextFile(file, arrayData)
     {
         if(rawFile.readyState === 4)
         {
-            if(rawFile.status == 200 || rawFile.status == 0)
+            if(rawFile.status === 200 || rawFile.status === 0)
             {
                 var allText = rawFile.responseText;
                 strToTest = new Array(allText);
@@ -109,7 +109,7 @@ function deterCPProtect() {
     var onload = window.onload;
 
     window.onload = function () {
-        if (typeof onload == "function") {
+        if (typeof onload === "function") {
             onload.apply(this, arguments);
         }
 
@@ -121,15 +121,17 @@ function deterCPProtect() {
             fields.push(inputs[i]);
         }
 
-        for (var i = 0; i < textareas.length; i++) {
+        for (i = 0; i < textareas.length; i++) {
             fields.push(textareas[i]);
         }
 
-        for (var i = 0; i < fields.length; i++) {
+        for (i = 0; i < fields.length; i++) {
             var field = fields[i];
 
             if (typeof field.onpaste !== "function" && !!field.getAttribute("onpaste")) {
-                field.onpaste = eval("(function () { " + field.getAttribute("onpaste") + " })");
+                field.onpaste = function () {
+                        field.getAttribute("onpaste");
+                }
             }
 
             if (typeof field.onpaste === "function") {
@@ -140,7 +142,7 @@ function deterCPProtect() {
                         oninput.apply(this, arguments);
                     }
 
-                    if (typeof this.previousValue == "undefined") {
+                    if (typeof this.previousValue === "undefined") {
                         this.previousValue = this.value;
                     }
 
@@ -180,7 +182,7 @@ function endTest() {
     //Since we are using the space as the seperator for words; it's the difference between "Hey.  This is me." versus "Hey. This is me." and
     //Having the last three words reporting as wrong/errors due to the double space after the first period, see?
     //*********************************************************************************************************************************************
-    wpmType = Math.round(((document.JobOp.typed.value.replace(/  /g, " ").split(" ").length) / totalTime) * 60)
+    wpmType = Math.round(((document.JobOp.typed.value.replace(/ {2}/g, " ").split(" ").length) / totalTime) * 60)
 
     //Set the start test button label and enabled state
     //document.JobOp.start.value = ">> Re-Start Typing Test <<";
@@ -192,7 +194,7 @@ function endTest() {
 
     //Declare an array of valid words for what NEEDED to be typed and what WAS typed
     //Again, refer to the above statement on removing the double spaces globally (1A)	
-    var typedValues = document.JobOp.typed.value.replace(/  /g, " ");
+    var typedValues = document.JobOp.typed.value.replace(/ {2}/g, " ");
     var neededValues = Left(document.JobOp.given.value, typedValues.length).replace(/  /g, " ").split(" ");
     typedValues = typedValues.split(" ");
 
@@ -222,7 +224,6 @@ function endTest() {
 
     //Loop through the valid words that were possible (those in the test baseline of needing to be typed)
     var str;
-    var i = 0;
     for (var i = 0; i < word; i++) {
         //If there is a word the user typed that is in the spot of the expected word, process it
         if (typedValues.length > i) {
@@ -251,7 +252,7 @@ function endTest() {
 
     //Finalize the after action report variable with the typing summary at the beginning (now that we have the final good and bad word counts)
     aftReport += "</font>";
-    aftReport = "<b>Typing Summary:</b><br>You typed " + (document.JobOp.typed.value.replace(/  /g, " ").split(" ").length) + " words in " + totalTime + " seconds, a speed of about " + wpmType + " words per minute.\n\nYou also had " + badWords + " errors, and " + goodWords + " correct words, giving scoring of " + ((goodWords / (goodWords + badWords)) * 100).toFixed(2) + "%.<br><br>" + aftReport;
+    aftReport = "<b>Typing Summary:</b><br>You typed " + (document.JobOp.typed.value.replace(/ {2}/g, " ").split(" ").length) + " words in " + totalTime + " seconds, a speed of about " + wpmType + " words per minute.\n\nYou also had " + badWords + " errors, and " + goodWords + " correct words, giving scoring of " + ((goodWords / (goodWords + badWords)) * 100).toFixed(2) + "%.<br><br>" + aftReport;
 
     //Set the statistical label variables with what we found (errors, words per minute, time taken, etc)	
     tErr.innerText = badWords + " Errors";
@@ -281,7 +282,7 @@ function calcStat() {
     try {
         //Reset the timer to fire the statistical update function again in 250ms
         //We do this here so that if the test has ended (below) we can cancel and stop it
-        checkStatusInt = setTimeout('calcStat();', 250);
+        checkStatusInt = setTimeout(calcStat, 250);
 
         //Declare reference variables to the statistical information labels
         var tStat = document.getElementById("stat_wpm");
@@ -353,9 +354,9 @@ function calcStat() {
         }
 
         //Our handy error handling
-    } catch (e) {}
+    }/* catch (e) {}
 }
-
+*/
 // Takes name from prompt, ready to store into MYSQL
 function myFunction() 
 {
