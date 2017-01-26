@@ -39,7 +39,8 @@ function readTextFile(file, arrayData)
     return arrayData;
 }
 
-readTextFile("file.txt");
+// File to read the testing string from
+readTextFile("content.txt");
 
 var strToTestType = "";
 
@@ -372,15 +373,23 @@ function myFunction()
         person.search("Cena") === - 1
        ) 
     {
-        alert("Invalid option");
+        alert(person);
+        $.ajax(
+        {
+            //alert(person);
+            data: 'name=' + person,
+            url: 'http://sstctf.org/typing-test/backend.php',
+            method: 'POST', // or GET
+            success: function(msg) 
+            {
+                alert(msg);
+            }
+        });
     }
     
     else
     {
-        // SQL
-        // MAGIC
-        // GOES
-        // HERE
+        alert("Invalid option");
     }
 }
 

@@ -1,4 +1,4 @@
-/* sst.CSS 2.82 by Otakar Andrysek */
+/* sytlesheet.CSS 3.00 by Otakar Andrysek */
  html{
 	box-sizing:border-box
 }
@@ -39,6 +39,7 @@ progress{
 abbr[title]{
 	border-bottom:none;
 	text-decoration:underline;
+	text-decoration:underline dotted
 }
  dfn{
 	font-style:italic
@@ -94,8 +95,7 @@ button,select{
 	text-transform:none
 }
  button,html [type=button],[type=reset],[type=submit]{
-	-webkit-appearance:button;
-	-moz-appearance:button
+	-webkit-appearance:button
 }
  button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner{
 	border-style:none;
@@ -127,12 +127,10 @@ textarea{
 }
  [type=search]{
 	-webkit-appearance:textfield;
-	-moz-appearance:textfield;
 	outline-offset:-2px
 }
  [type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{
-	-webkit-appearance:none;
-	-moz-appearance:none
+	-webkit-appearance:none
 }
  ::-webkit-input-placeholder{
 	color:inherit;
@@ -140,7 +138,6 @@ textarea{
 }
  ::-webkit-file-upload-button{
 	-webkit-appearance:button;
-	-moz-appearance:botton;
 	font:inherit
 }
 /* End extract */
@@ -152,9 +149,33 @@ textarea{
 html{
 	overflow-x:hidden
 }
-
+ h1,h2,h3,h4,h5,h6,.sst-slim,.sst-wide{
+	font-family:"Segoe UI",Arial,sans-serif
+}
+ h1{
+	font-size:36px
+}
+h2{
+	font-size:30px
+}
+h3{
+	font-size:24px
+}
+h4{
+	font-size:20px
+}
+h5{
+	font-size:18px
+}
+h6{
+	font-size:16px
+}
  .sst-serif{
 	font-family:"Times New Roman",Times,serif
+}
+ h1,h2,h3,h4,h5,h6{
+	font-weight:400;
+	margin:10px 0
 }
 .sst-wide{
 	letter-spacing:4px
@@ -355,8 +376,6 @@ ul.sst-ul li:last-child{
 	padding:0 8px;
 	border-bottom:3px solid transparent;
 	-webkit-transition:border-bottom .3s;
-	-moz-transition:border-bottom .3s;
-	-o-transition:border-bottom .3s;
 	transition:border-bottom .3s
 }
  .sst-topnav a:hover{
@@ -374,16 +393,14 @@ ul.sst-ul li:last-child{
 }
  .sst-btn,.sst-btn-floating,.sst-dropnav a,.sst-btn-floating-large,.sst-btn-block,.sst-hover-shadow,.sst-hover-opacity,.sst-hover-opacity-off,.sst-hover-sepia,.sst-hover-grayscale,.sst-hover-greyscale, .sst-navbar a,.sst-sidenav a,.sst-pagination li a,.sst-hoverable tbody tr,.sst-hoverable li,.sst-accordion-content a,.sst-dropdown-content a,.sst-dropdown-click:hover,.sst-dropdown-hover:hover,.sst-opennav,.sst-closenav,.sst-closebtn, .sst-hover-amber,.sst-hover-aqua,.sst-hover-blue,.sst-hover-light-blue,.sst-hover-brown,.sst-hover-cyan,.sst-hover-blue-grey,.sst-hover-green,.sst-hover-light-green,.sst-hover-indigo,.sst-hover-khaki,.sst-hover-lime,.sst-hover-orange,.sst-hover-deep-orange,.sst-hover-pink, .sst-hover-purple,.sst-hover-deep-purple,.sst-hover-red,.sst-hover-sand,.sst-hover-teal,.sst-hover-yellow,.sst-hover-white,.sst-hover-black,.sst-hover-grey,.sst-hover-light-grey,.sst-hover-dark-grey,.sst-hover-text-amber,.sst-hover-text-aqua,.sst-hover-text-blue,.sst-hover-text-light-blue, .sst-hover-text-brown,.sst-hover-text-cyan,.sst-hover-text-blue-grey,.sst-hover-text-green,.sst-hover-text-light-green,.sst-hover-text-indigo,.sst-hover-text-khaki,.sst-hover-text-lime,.sst-hover-text-orange,.sst-hover-text-deep-orange,.sst-hover-text-pink,.sst-hover-text-purple, .sst-hover-text-deep-purple,.sst-hover-text-red,.sst-hover-text-sand,.sst-hover-text-teal,.sst-hover-text-yellow,.sst-hover-text-white,.sst-hover-text-black,.sst-hover-text-grey,.sst-hover-text-light-grey,.sst-hover-text-dark-grey {
 	-webkit-transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s,filter 0.3s;
-	-moz-transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s,filter 0.3s;
-	-o-transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s,filter 0.3s;
+	transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s,filter 0.3s
 }
  .sst-ripple:active{
 	opacity:0.5
 }
 .sst-ripple{
 	-webkit-transition:opacity 0s;
-	-moz-transition:opacity 0s;
-	-o-transition:opacity 0s
+	transition:opacity 0s
 }
  .sst-sidenav{
 	height:100%;
@@ -873,45 +890,35 @@ ul.sst-ul li:last-child{
 	position:absolute;
 	top:50%;
 	left:50%;
-	-moz-transform:translate(-50%,-50%);
-	-o-transform:translate(-50%,-50%);
-	-webkit-transform:translate(-50%,-50%);
+	transform:translate(-50%,-50%);
 	-ms-transform:translate(-50%,-50%)
 }
  .sst-display-left{
 	position:absolute;
 	top:50%;
-	left:0;
-	-moz-transform:translate(0%,-50%);
-	-o-transform:translate(0%,-50%);
-	-webkit-transform:translate(0%,-50%);
+	left:0%;
+	transform:translate(0%,-50%);
 	-ms-transform:translate(-0%,-50%)
 }
  .sst-display-right{
 	position:absolute;
 	top:50%;
-	right:0;
-	-moz-transform:translate(0%,-50%);
-	-o-transform:translate(0%,-50%);
-	-webkit-transform:translate(0%,-50%);
+	right:0%;
+	transform:translate(0%,-50%);
 	-ms-transform:translate(0%,-50%)
 }
  .sst-display-topmiddle{
 	position:absolute;
 	left:50%;
 	top:0;
-	-moz-transform:translate(-50%,0%);
-	-o-transform:translate(-50%,0%);
-	-webkit-transform:translate(-50%,0%);
+	transform:translate(-50%,0%);
 	-ms-transform:translate(-50%,0%)
 }
  .sst-display-bottommiddle{
 	position:absolute;
 	left:50%;
 	bottom:0;
-	-moz-transform:translate(-50%,0%);
-	-o-transform:translate(-50%,0%);
-	-webkit-transform:translate(-50%,0%);
+	transform:translate(-50%,0%);
 	-ms-transform:translate(-50%,0%)
 }
  .sst-circle{
@@ -1063,7 +1070,7 @@ ul.sst-ul li:last-child{
 	padding:0 8px
 }
  .sst-spin{
-	-moz-animation:sst-spin 2s infinite linear;
+	animation:sst-spin 2s infinite linear;
 	-webkit-animation:sst-spin 2s infinite linear
 }
  @-webkit-keyframes sst-spin{
@@ -1143,7 +1150,7 @@ ul.sst-ul li:last-child{
 }
  .sst-animate-fading{
 	-webkit-animation:fading 10s infinite;
-	-moz-animation:fading 10s infinite
+	animation:fading 10s infinite
 }
  @-webkit-keyframes fading{
 	0%{
@@ -1169,7 +1176,7 @@ ul.sst-ul li:last-child{
 }
  .sst-animate-opacity{
 	-webkit-animation:opac 0.8s;
-	-moz-animation:opac 0.8s
+	animation:opac 0.8s
 }
  @-webkit-keyframes opac{
 	from{
@@ -1190,7 +1197,7 @@ ul.sst-ul li:last-child{
  .sst-animate-top{
 	position:relative;
 	-webkit-animation:animatetop 0.4s;
-	-moz-animation:animatetop 0.4s
+	animation:animatetop 0.4s
 }
  @-webkit-keyframes animatetop{
 	from{
@@ -1215,7 +1222,7 @@ ul.sst-ul li:last-child{
  .sst-animate-left{
 	position:relative;
 	-webkit-animation:animateleft 0.4s;
-	-moz-animation:animateleft 0.4s
+	animation:animateleft 0.4s
 }
  @-webkit-keyframes animateleft{
 	from{
@@ -1240,7 +1247,7 @@ ul.sst-ul li:last-child{
  .sst-animate-right{
 	position:relative;
 	-webkit-animation:animateright 0.4s;
-	-moz-animation:animateright 0.4s
+	animation:animateright 0.4s
 }
  @-webkit-keyframes animateright{
 	from{
@@ -1265,7 +1272,7 @@ ul.sst-ul li:last-child{
  .sst-animate-bottom{
 	position:relative;
 	-webkit-animation:animatebottom 0.4s;
-	-moz-animation:animatebottom 0.4s
+	animation:animatebottom 0.4s
 }
  @-webkit-keyframes animatebottom{
 	from{
@@ -1273,7 +1280,7 @@ ul.sst-ul li:last-child{
 		opacity:0
 	}
 	 to{
-		bottom:0;
+		bottom:0px;
 		opacity:1
 	}
 }
@@ -1289,16 +1296,14 @@ ul.sst-ul li:last-child{
 }
  .sst-animate-zoom {
 	-webkit-animation:animatezoom 0.6s;
-	-moz-animation:animatezoom 0.6s
+	animation:animatezoom 0.6s
 }
  @-webkit-keyframes animatezoom{
 	from{
-		-webkit-transform:scale(0);
-		transform:scale(0)
+		-webkit-transform:scale(0)
 	}
 	 to{
-		-webkit-transform:scale(1);
-		transform:scale(1)
+		-webkit-transform:scale(1)
 	}
 }
  @keyframes animatezoom{
@@ -1311,8 +1316,7 @@ ul.sst-ul li:last-child{
 }
  .sst-animate-input{
 	-webkit-transition:width 0.4s ease-in-out;
-	-o-transition:width 0.4s ease-in-out;
-	-moz-transition:width 0.4s ease-in-out;
+	transition:width 0.4s ease-in-out
 }
 .sst-animate-input:focus{
 	width:100%!important
@@ -1375,6 +1379,291 @@ ul.sst-ul li:last-child{
 	background-color:transparent!important
 }
 /* Colors */
-.sst-amber,.sst-hover-amber:hover{
-        color:#000!important;
+ .sst-amber,.sst-hover-amber:hover{
+	color:#000!important;
+	background-color:#ffc107!important
+}
+ .sst-aqua,.sst-hover-aqua:hover{
+	color:#000!important;
+	background-color:#00ffff!important
+}
+ .sst-blue,.sst-hover-blue:hover{
+	color:#fff!important;
+	background-color:#2196F3!important
+}
+ .sst-light-blue,.sst-hover-light-blue:hover{
+	color:#000!important;
+	background-color:#87CEEB!important
+}
+ .sst-brown,.sst-hover-brown:hover{
+	color:#fff!important;
+	background-color:#795548!important
+}
+ .sst-cyan,.sst-hover-cyan:hover{
+	color:#000!important;
+	background-color:#00bcd4!important
+}
+ .sst-blue-grey,.sst-hover-blue-grey:hover,.sst-blue-gray,.sst-hover-blue-gray:hover{
+	color:#fff!important;
+	background-color:#607d8b!important
+}
+ .sst-green,.sst-hover-green:hover{
+	color:#fff!important;
+	background-color:#4CAF50!important
+}
+ .sst-light-green,.sst-hover-light-green:hover{
+	color:#000!important;
+	background-color:#8bc34a!important
+}
+ .sst-indigo,.sst-hover-indigo:hover{
+	color:#fff!important;
+	background-color:#3f51b5!important
+}
+ .sst-khaki,.sst-hover-khaki:hover{
+	color:#000!important;
+	background-color:#f0e68c!important
+}
+ .sst-lime,.sst-hover-lime:hover{
+	color:#000!important;
+	background-color:#cddc39!important
+}
+ .sst-orange,.sst-hover-orange:hover{
+	color:#000!important;
+	background-color:#ff9800!important
+}
+ .sst-deep-orange,.sst-hover-deep-orange:hover{
+	color:#fff!important;
+	background-color:#ff5722!important
+}
+ .sst-pink,.sst-hover-pink:hover{
+	color:#fff!important;
+	background-color:#e91e63!important
+}
+ .sst-purple,.sst-hover-purple:hover{
+	color:#fff!important;
+	background-color:#9c27b0!important
+}
+ .sst-deep-purple,.sst-hover-deep-purple:hover{
+	color:#fff!important;
+	background-color:#673ab7!important
+}
+ .sst-red,.sst-hover-red:hover{
+	color:#fff!important;
+	background-color:#f44336!important
+}
+ .sst-sand,.sst-hover-sand:hover{
+	color:#000!important;
+	background-color:#fdf5e6!important
+}
+ .sst-teal,.sst-hover-teal:hover{
+	color:#fff!important;
+	background-color:#009688!important
+}
+ .sst-yellow,.sst-hover-yellow:hover{
+	color:#000!important;
+	background-color:#ffeb3b!important
+}
+ .sst-white,.sst-hover-white:hover{
+	color:#000!important;
+	background-color:#fff!important
+}
+ .sst-black,.sst-hover-black:hover{
+	color:#fff!important;
+	background-color:#000!important
+}
+ .sst-grey,.sst-hover-grey:hover,.sst-gray,.sst-hover-gray:hover{
+	color:#000!important;
+	background-color:#9e9e9e!important
+}
+ .sst-light-grey,.sst-hover-light-grey:hover,.sst-light-gray,.sst-hover-light-gray:hover{
+	color:#000!important;
+	background-color:#f1f1f1!important
+}
+ .sst-dark-grey,.sst-hover-dark-grey:hover,.sst-dark-gray,.sst-hover-dark-gray:hover{
+	color:#fff!important;
+	background-color:#616161!important
+}
+ .sst-pale-red,.sst-hover-pale-red:hover{
+	color:#000!important;
+	background-color:#ffdddd!important
+}
+ .sst-pale-green,.sst-hover-pale-green:hover{
+	color:#000!important;
+	background-color:#ddffdd!important
+}
+ .sst-pale-yellow,.sst-hover-pale-yellow:hover{
+	color:#000!important;
+	background-color:#ffffcc!important
+}
+ .sst-pale-blue,.sst-hover-pale-blue:hover{
+	color:#000!important;
+	background-color:#ddffff!important
+}
+ .sst-text-amber,.sst-hover-text-amber:hover{
+	color:#ffc107!important
+}
+ .sst-text-aqua,.sst-hover-text-aqua:hover{
+	color:#00ffff!important
+}
+ .sst-text-blue,.sst-hover-text-blue:hover{
+	color:#2196F3!important
+}
+ .sst-text-light-blue,.sst-hover-text-light-blue:hover{
+	color:#87CEEB!important
+}
+ .sst-text-brown,.sst-hover-text-brown:hover{
+	color:#795548!important
+}
+ .sst-text-cyan,.sst-hover-text-cyan:hover{
+	color:#00bcd4!important
+}
+ .sst-text-blue-grey,.sst-hover-text-blue-grey:hover,.sst-text-blue-gray,.sst-hover-text-blue-gray:hover{
+	color:#607d8b!important
+}
+ .sst-text-green,.sst-hover-text-green:hover{
+	color:#4CAF50!important
+}
+ .sst-text-light-green,.sst-hover-text-light-green:hover{
+	color:#8bc34a!important
+}
+ .sst-text-indigo,.sst-hover-text-indigo:hover{
+	color:#3f51b5!important
+}
+ .sst-text-khaki,.sst-hover-text-khaki:hover{
+	color:#b4aa50!important
+}
+ .sst-text-lime,.sst-hover-text-lime:hover{
+	color:#cddc39!important
+}
+ .sst-text-orange,.sst-hover-text-orange:hover{
+	color:#ff9800!important
+}
+ .sst-text-deep-orange,.sst-hover-text-deep-orange:hover{
+	color:#ff5722!important
+}
+ .sst-text-pink,.sst-hover-text-pink:hover{
+	color:#e91e63!important
+}
+ .sst-text-purple,.sst-hover-text-purple:hover{
+	color:#9c27b0!important
+}
+ .sst-text-deep-purple,.sst-hover-text-deep-purple:hover{
+	color:#673ab7!important
+}
+ .sst-text-red,.sst-hover-text-red:hover{
+	color:#f44336!important
+}
+ .sst-text-sand,.sst-hover-text-sand:hover{
+	color:#fdf5e6!important
+}
+ .sst-text-teal,.sst-hover-text-teal:hover{
+	color:#009688!important
+}
+ .sst-text-yellow,.sst-hover-text-yellow:hover{
+	color:#d2be0e!important
+}
+ .sst-text-white,.sst-hover-text-white:hover{
+	color:#fff!important
+}
+ .sst-text-black,.sst-hover-text-black:hover{
+	color:#000!important
+}
+ .sst-text-grey,.sst-hover-text-grey:hover,.sst-text-gray,.sst-hover-text-gray:hover{
+	color:#757575!important
+}
+ .sst-text-light-grey,.sst-hover-text-light-grey:hover,.sst-text-light-gray,.sst-hover-text-light-gray:hover{
+	color:#f1f1f1!important
+}
+ .sst-text-dark-grey,.sst-hover-text-dark-grey:hover,.sst-text-dark-gray,.sst-hover-text-dark-gray:hover{
+	color:#3a3a3a!important
+}
+ .sst-border-amber,.sst-hover-border-amber:hover{
+	border-color:#ffc107!important
+}
+ .sst-border-aqua,.sst-hover-border-aqua:hover{
+	border-color:#00ffff!important
+}
+ .sst-border-blue,.sst-hover-border-blue:hover{
+	border-color:#2196F3!important
+}
+ .sst-border-light-blue,.sst-hover-border-light-blue:hover{
+	border-color:#87CEEB!important
+}
+ .sst-border-brown,.sst-hover-border-brown:hover{
+	border-color:#795548!important
+}
+ .sst-border-cyan,.sst-hover-border-cyan:hover{
+	border-color:#00bcd4!important
+}
+ .sst-border-blue-grey,.sst-hover-blue-grey:hover,.sst-border-blue-gray,.sst-hover-blue-gray:hover{
+	border-color:#607d8b!important
+}
+ .sst-border-green,.sst-hover-border-green:hover{
+	border-color:#4CAF50!important
+}
+ .sst-border-light-green,.sst-hover-border-light-green:hover{
+	border-color:#8bc34a!important
+}
+ .sst-border-indigo,.sst-hover-border-indigo:hover{
+	border-color:#3f51b5!important
+}
+ .sst-border-khaki,.sst-hover-border-khaki:hover{
+	border-color:#f0e68c!important
+}
+ .sst-border-lime,.sst-hover-border-lime:hover{
+	border-color:#cddc39!important
+}
+ .sst-border-orange,.sst-hover-border-orange:hover{
+	border-color:#ff9800!important
+}
+ .sst-border-deep-orange,.sst-hover-border-deep-orange:hover{
+	border-color:#ff5722!important
+}
+ .sst-border-pink,.sst-hover-border-pink:hover{
+	border-color:#e91e63!important
+}
+ .sst-border-purple,.sst-hover-border-purple:hover{
+	border-color:#9c27b0!important
+}
+ .sst-border-deep-purple,.sst-hover-border-deep-purple:hover{
+	border-color:#673ab7!important
+}
+ .sst-border-red,.sst-hover-border-red:hover{
+	border-color:#f44336!important
+}
+ .sst-border-sand,.sst-hover-border-sand:hover{
+	border-color:#fdf5e6!important
+}
+ .sst-border-teal,.sst-hover-border-teal:hover{
+	border-color:#009688!important
+}
+ .sst-border-yellow,.sst-hover-border-yellow:hover{
+	border-color:#ffeb3b!important
+}
+ .sst-border-white,.sst-hover-border-white:hover{
+	border-color:#fff!important
+}
+ .sst-border-black,.sst-hover-border-black:hover{
+	border-color:#000!important
+}
+ .sst-border-grey,.sst-hover-border-grey:hover,.sst-border-gray,.sst-hover-border-gray:hover{
+	border-color:#9e9e9e!important
+}
+ .sst-border-light-grey,.sst-hover-border-light-grey:hover,.sst-border-light-gray,.sst-hover-border-light-gray:hover{
+	border-color:#f1f1f1!important
+}
+ .sst-border-dark-grey,.sst-hover-border-dark-grey:hover,.sst-border-dark-gray,.sst-hover-border-dark-gray:hover{
+	border-color:#616161!important
+}
+ .sst-border-pale-red,.sst-hover-border-pale-red:hover{
+	border-color:#ffe7e7!important
+}
+.sst-border-pale-green,.sst-hover-border-pale-green:hover{
+	border-color:#e7ffe7!important
+}
+ .sst-border-pale-yellow,.sst-hover-border-pale-yellow:hover{
+	border-color:#ffffcc!important
+}
+.sst-border-pale-blue,.sst-hover-border-pale-blue:hover{
+	border-color:#e7ffff!important
 }
