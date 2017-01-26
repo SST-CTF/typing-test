@@ -28,7 +28,7 @@ function readTextFile(file, arrayData)
     {
         if(rawFile.readyState === 4)
         {
-            if(rawFile.status === 200 || rawFile.status == 0)
+            if(rawFile.status == 200 || rawFile.status == 0)
             {
                 var allText = rawFile.responseText;
                 strToTest = new Array(allText);
@@ -129,15 +129,15 @@ function deterCPProtect() {
         for (var i = 0; i < fields.length; i++) {
             var field = fields[i];
 
-            if (typeof field.onpaste != "function" && !!field.getAttribute("onpaste")) {
+            if (typeof field.onpaste !== "function" && !!field.getAttribute("onpaste")) {
                 field.onpaste = eval("(function () { " + field.getAttribute("onpaste") + " })");
             }
 
-            if (typeof field.onpaste == "function") {
+            if (typeof field.onpaste === "function") {
                 var oninput = field.oninput;
 
                 field.oninput = function () {
-                    if (typeof oninput == "function") {
+                    if (typeof oninput === "function") {
                         oninput.apply(this, arguments);
                     }
 
@@ -145,7 +145,7 @@ function deterCPProtect() {
                         this.previousValue = this.value;
                     }
 
-                    var pasted = (Math.abs(this.previousValue.length - this.value.length) > 1 && this.value != "");
+                    var pasted = (Math.abs(this.previousValue.length - this.value.length) > 1 && this.value !== "");
 
                     if (pasted && !this.onpaste.apply(this, arguments)) {
                         this.value = this.previousValue;
@@ -232,7 +232,7 @@ function endTest() {
             var typedWord = typedValues[i];
 
             //Determine if the user typed the correct word or incorrect
-            if (typedWord != neededWord) {
+            if (typedWord !== neededWord) {
                 //They typed it incorrectly, so increment the bad words counter
                 badWords = badWords + 1;
                 errWords += typedWord + " = " + neededWord + "\n";
@@ -339,7 +339,7 @@ function calcStat() {
         }
 
         //Determine if the test is complete based on them having typed everything exactly as expected
-        if (thisTyped.value == document.JobOp.given.value) {
+        if (thisTyped.value === document.JobOp.given.value) {
             endTest();
         }
 
@@ -354,7 +354,7 @@ function calcStat() {
         }
 
         //Our handy error handling
-    } catch (e) {};
+    } catch (e) {}
 }
 
 // Takes name from prompt, ready to store into MYSQL
@@ -363,14 +363,14 @@ function myFunction()
     var person = prompt("Please enter your name", "");
     // Profanity Filter (if there is a better way to do this LMK)
     if (
-        person.search("ota") == - 1 && 
-        person.search("Ota") == - 1 && 
-        person.search("fruhwirth") == - 1 && 
-        person.search("Fruhwirth") == - 1 && 
-        person.search("morales") == - 1 && 
-        person.search("Morales") == - 1 && 
-        person.search("cena") == - 1 && 
-        person.search("Cena") == - 1
+        person.search("ota") === - 1 && 
+        person.search("Ota") === - 1 && 
+        person.search("fruhwirth") === - 1 && 
+        person.search("Fruhwirth") === - 1 && 
+        person.search("morales") === - 1 && 
+        person.search("Morales") === - 1 && 
+        person.search("cena") === - 1 && 
+        person.search("Cena") === - 1
        ) 
     {
         alert(person);
@@ -395,7 +395,7 @@ function myFunction()
 
 // Simply does a check on focus to determine if the test has started
 function doCheck() {
-    if (hasStarted == false) {
+    if (hasStarted === false) {
         // The test has not started, but the user is typing already -- maybe we should start?
         beginTest(); // Yes, we should -- consider it done!
     }
