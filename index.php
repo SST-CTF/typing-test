@@ -220,8 +220,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "INSERT INTO test (name)
-VALUES ('$name')";
+$sql = "INSERT INTO results (name, net_wpm, gross_wpm, error, accuracy)
+VALUES ('$name', '0', '0', '0', '0')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
