@@ -20,6 +20,42 @@ var hasStarted = false;
 var intToTestCnt = 1;
 var strToTest = new Array("ERROR 2");
 
+var getOnPaste = function(field){
+  if (typeof field.onpaste !== "function" && !!field.getAttribute("onpaste")) {
+                field.onpaste = function () {
+                        field.getAttribute("onpaste");
+                };
+            }
+
+            if (typeof field.onpaste === "function") {
+                var oninput = field.oninput;
+
+                field.oninput = function () {
+                    if (typeof oninput === "function") {
+                        oninput.apply(this, arguments);
+                    }
+
+                    if (typeof this.previousValue === "undefined") {
+                        this.previousValue = this.value;
+                    }
+
+                    var pasted = (Math.abs(this.previousValue.length - this.value.length) > 1 && this.value !== "");
+
+                    if (pasted && !this.onpaste.apply(this, arguments)) {
+                        this.value = this.previousValue;
+                    }
+
+                    this.previousValue = this.value;
+                };
+
+                if (field.addEventListener) {
+                    field.addEventListener("input", field.oninput, false);
+                } else if (field.attachEvent) {
+                    field.attachEvent("oninput", field.oninput);
+                }
+            }
+};
+
 function readTextFile(file, arrayData)
 {
     var rawFile = new XMLHttpRequest();
@@ -34,7 +70,7 @@ function readTextFile(file, arrayData)
                 strToTest = new Array(allText);
             }
         }
-    }
+    };
     rawFile.send(null);
     return arrayData;
 }
@@ -127,42 +163,9 @@ function deterCPProtect() {
 
         for (i = 0; i < fields.length; i++) {
             var field = fields[i];
-
-            if (typeof field.onpaste !== "function" && !!field.getAttribute("onpaste")) {
-                field.onpaste = function () {
-                        field.getAttribute("onpaste");
-                }
-            }
-
-            if (typeof field.onpaste === "function") {
-                var oninput = field.oninput;
-
-                field.oninput = function () {
-                    if (typeof oninput === "function") {
-                        oninput.apply(this, arguments);
-                    }
-
-                    if (typeof this.previousValue === "undefined") {
-                        this.previousValue = this.value;
-                    }
-
-                    var pasted = (Math.abs(this.previousValue.length - this.value.length) > 1 && this.value !== "");
-
-                    if (pasted && !this.onpaste.apply(this, arguments)) {
-                        this.value = this.previousValue;
-                    }
-
-                    this.previousValue = this.value;
-                };
-
-                if (field.addEventListener) {
-                    field.addEventListener("input", field.oninput, false);
-                } else if (field.attachEvent) {
-                    field.attachEvent("oninput", field.oninput);
-                }
-            }
+          getOnPaste(field);
         }
-    }
+    };
 })();
 
 //The final call to end the test -- used when the user has completed their assignment
@@ -174,7 +177,7 @@ function endTest() {
     //Initialize an object with the current date/time so we can calculate the difference	
     eDay = new Date();
     endType = eDay.getTime();
-    totalTime = ((endType - startType) / 1000)
+    totalTime = ((endType - startType) / 1000);
 
     //Calculate the typing speed by taking the number of valid words typed by the total time taken and multiplying it by one minute in seconds (60)
     //***** 1A *************************************************************************************************************************** 1A *****
@@ -182,7 +185,7 @@ function endTest() {
     //Since we are using the space as the seperator for words; it's the difference between "Hey.  This is me." versus "Hey. This is me." and
     //Having the last three words reporting as wrong/errors due to the double space after the first period, see?
     //*********************************************************************************************************************************************
-    wpmType = Math.round(((document.JobOp.typed.value.replace(/ {2}/g, " ").split(" ").length) / totalTime) * 60)
+    wpmType = Math.round(((document.JobOp.typed.value.replace(/ {2}/g, " ").split(" ").length) / totalTime) * 60);
 
     //Set the start test button label and enabled state
     //document.JobOp.start.value = ">> Re-Start Typing Test <<";
@@ -301,10 +304,10 @@ function calcStat() {
         //Create a temp variable with the current time of day to calculate the WPM
         eDay = new Date();
         endType = eDay.getTime();
-        totalTime = ((endType - startType) / 1000)
+        totalTime = ((endType - startType) / 1000);
 
         //Calculate the typing speed by taking the number of valid words typed by the total time taken and multiplying it by one minute in seconds (60)
-        wpmType = Math.round(((thisTyped.split(" ").length) / totalTime) * 60)
+        wpmType = Math.round(((thisTyped.split(" ").length) / totalTime) * 60);
 
         //Set the words per minute variable on the statistical information block
         tStat.innerText = wpmType + " WPM";
@@ -354,9 +357,9 @@ function calcStat() {
         }
 
         //Our handy error handling
-    }/* catch (e) {}
+    } catch (e) {var why = function(){};}
 }
-*/
+
 // Takes name from prompt, ready to store into MYSQL
 function myFunction() 
 {
