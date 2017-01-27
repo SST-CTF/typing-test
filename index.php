@@ -1,9 +1,9 @@
-<script src="TypingTest.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/jquery-3.1.1.min.js"></script>
 
 <!DOCTYPE html>
-
 <html>
-<title>SST CTF Typing Competition</title>
+<title>SST Typing Competition</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/stylesheet.css">
 <link rel="stylesheet" href="fonts/raleway.css">
@@ -20,23 +20,50 @@
     }
 </style>
 
+        <?php
+    // Include Password File
+include 'password.php';
+    
+// define variables and set to empty values
+$nameErr = $emailErr = $genderErr = $websiteErr = "";
+$name = $email = $gender = $comment = $website = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+      $nameErr = "Only letters and white space allowed"; 
+    }
+  }
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+    
 <body class="sst-light-grey">
 
     <!-- Top container -->
     <div class="sst-container sst-top sst-black sst-large sst-padding" style="z-index:4">
-        <button class="sst-btn sst-hide-large sst-padding-0 sst-hover-text-grey" onclick="sst_open();"><i class="fa fa-bars"></i>  Menu</button>
-        <span class="sst-right">SST CTF</span>
+        <span class="sst-right"><a href="http://sstctf.org" style="text-decoration: none">SST CTF</a></span>
     </div>
 
     <!-- Overlay effect when opening sidenav on small screens -->
     <div class="sst-overlay sst-hide-large sst-animate-opacity" onclick="sst_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-    <!-- !PAGE CONTENT! -->
+    <!-- PAGE CONTENT -->
     <div class="sst-main" style="margin-left:10px;margin-top:43px;margin-right:10px;">
 
         <!-- Header -->
-        <header class="sst-container" style="padding-top:22px">
-            <h5><b><i class="fa fa-dashboard"></i> SST CTF Typing Competition</b></h5>
+        <header class="sst-container" style="padding-top:6px">
+            <h5><b><i class="fa fa-dashboard"></i> 2017 SST Typing Competition</b></h5>
         </header>
         <div class="sst-row-padding sst-margin-bottom">
             <div class="sst-quarter">
@@ -93,55 +120,28 @@
         <!-- Begin Old Code -->
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <tr>
-                <td style="padding: 4px" class="bodya" colspan="2">
+                <td style="padding: 10px" class="bodya" colspan="2">
                     <FORM name="JobOp">
                         <table border="0" cellpadding="5" width="100%">
-                            <tr>
-                                <td style="border-left-width: 1px; border-right-width: 1px; border-top: 1px solid #344270; border-bottom-width: 1px">
                                     <div id="expectedArea" style="display:block">
                                         <p style="margin-top: 0; margin-bottom: 0">
-                                            <font color="#7A88C0" face="Arial" size="1">
-                                                <textarea name="given" cols=53 rows=10 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-family:Arial; font-size:9pt">Click on the button below to start the typing test.  What you will be expected to type will appear here.</textarea>
-                                            </font>
+                                                <textarea name="given" cols=53 rows=12 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-size:12pt" onpaste="return false;">If you see this something broke.</textarea>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p align="center" style="margin-top: 0; margin-bottom: 2px">
-                                        <input type=button value="&gt;&gt; Start Typing Test &lt;&lt;" name="start" onClick="beginTest()" style="display:block; border-left:1px solid #293358; border-right:2px solid #293358; border-top:1px solid #293358; border-bottom:2px solid #293358; width: 100%; background-color: #9BB892; color:#FFFFFF; background-image:url('Images/Green_Back.gif')">
-                                        <p align="center" style="margin-top: 0; margin-bottom: 0">
-                                            <input disabled type=button value="&gt;&gt; End Typing Test &lt;&lt;" name="stop" onClick="endTest()" style="display:none; border-left:1px solid #293358; border-right:2px solid #293358; border-top:1px solid #293358; border-bottom:2px solid #293358; width: 100%; background-color: #F05959; color:#FFFFFF; background-image:url('Images/Red_Back.gif')">
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <div id="typeArea" style="display:block">
-                                        <table border="0" width="100%" cellspacing="1">
-                                            <tr>
-                                                <td style="border: 1px solid #9CA8D1; background-color: #EAECF4">
-                                                    <div align="left">
-                                                        <table id="stProg" border="0" width="0%" cellspacing="1">
-                                                       <div class="sst-progress-container sst-grey">
-                                                <div id="myBar" class="sst-progressbar sst-green" style="width:55%">
-                                                    <div class="sst-center sst-text-white" id="thisProg">0%</div>
+                                <input style="display:none" type="hidden" name="start" onType="beginTest()">
+                                <input style="display:none" type="hidden" name="stop" onEnd="endTest()" >
+                            <table type="hidden" id="stProg" style="display:none">
+                                                <div type="hidden" id="myBar" style="display:none">
+                                                <div type="hidden" id="thisProg" style="display:none"></div>
                                                 </div>
-                                        </div>
-                                                        </table>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                            
+                            </table>
+                            
+                            <tr>
+                                <td style="padding: 10px" class="bodya" colspan="2">
+                                    <div id="typeArea" style="display:block">
                                         <p style="margin-top: 0; margin-bottom: 0">
-                                            <font color="#7A88C0" face="Arial" size="1">
-                                                <textarea onkeypress="doCheck();" onkeydown="//calcStat()" name="typed" cols=53 rows=10 wrap=on style="width: 100%; border: 1px solid #344270; padding: 2px; font-family:Arial; font-size:9pt">
-</textarea>
-                                            </font>
+                                                <textarea type="hidden" onkeypress="doCheck();" onkeydown="//calcStat()" name="typed" cols=53 rows=12 wrap=on onFocus="deterCPProtect();" style="width: 100%; border: 1px solid #344270; padding: 2px; font-size:12pt" onpaste="return false;"></textarea>
                                     </div>
-                                    <div id="afterAction" style="display:none">
-                                    </div>
+                                    <div id="afterAction" style="display:none"></div>
                                 </td>
                             </tr>
                             <script>
@@ -157,10 +157,20 @@
         </table>
         <!-- End Old Code -->
 
+        <!-- Submit Results to Database -->
+        <form align: center; method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+            Name: 
+            <input type="text" name="name" value="<?php echo $name;?>">
+            <input type="submit" name="submit" value="Submit">
+        </form>
+        
+        
         <!-- Footer -->
         <footer class="sst-container sst-padding-16 sst-light-grey">
+            <br>
             <h4>FOOTER</h4>
             <p>Powered by <a href="http://sstctf.org" target="_blank">SST CTF</a></p>
+            <p>Find project on <a href="http://sstctf.org" target="_blank">GitHub</a></p>
             <br>
             <input disabled id="printB" onclick="window.print();" type="button" value="Print Results" name="printB">
         </footer>
@@ -193,5 +203,39 @@
         }
     </script>
 </body>
+    
+    <?php
+        //$message = "PHP LOADED";
+        //echo "<script type='text/javascript'>alert('$message');</script>";
+        
+        echo "<h2>Your Input:</h2>";
+        echo $name;
+        echo $person;
+        echo "\n";
 
+$servername = "localhost";
+$username = "www";
+$dbname = "typing_test";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "INSERT INTO results (name, net_wpm, gross_wpm, error, accuracy)
+VALUES ('$name', '0', '0', '0', '0')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+        
+        
+        ?>
+    
 </html>

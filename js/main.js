@@ -2,15 +2,6 @@
 // TypingTest - JavaScript Application
 // Copyright 2015,  <Otakar Andrysek>
 // Copyright 2016-2017,  <SST CTF>
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License at <http://www.gnu.org/licenses/> for
-// more details.
 // Usage: launch locally or remotely on a client
 // Revision history:
 // 2015-02-15 Created by first build ALPHA .1
@@ -18,6 +9,7 @@
 // 2015-02-16 Bug-Fixed ALPHA .23
 // 2016-11-03 Cleaned up code again
 // ---------------------------------------------------------------------------
+
 //Holds whether or not we have already started the first typing test or now
 //	True = The test has already started
 //	False = The test hasn't started yet
@@ -26,9 +18,30 @@ var hasStarted = false;
 //strToTest is an array object that holds various strings to be used as the base typing test
 //	- If you update the array, be sure to update the intToTestCnt with the number of ACTIVE testing strings
 var intToTestCnt = 1;
+var strToTest = new Array("ERROR 2");
 
-// In the future this string should be stored in a seperate text file
-var strToTest = new Array("This is a test of a test ")
+function readTextFile(file, arrayData)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status == 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                strToTest = new Array(allText);
+            }
+        }
+    }
+    rawFile.send(null);
+    return arrayData;
+}
+
+// File to read the testing string from
+readTextFile("content.txt");
+
 var strToTestType = "";
 
 var checkStatusInt;
@@ -76,7 +89,7 @@ function beginTest() {
     calcStat();
 
     //Initialize the testing objects by setting the values of the buttons, what to type, and what is typed
-    document.JobOp.start.value = "-- Typing Test Started --";
+    //document.JobOp.start.value = "-- Typing Test Started --";
     document.JobOp.start.disabled = true;
     document.JobOp.given.value = strToTestType;
     document.JobOp.typed.value = "";
@@ -91,6 +104,65 @@ function beginTest() {
 function deterCPProtect() {
     document.JobOp.typed.focus();
 }
+
+// Register onpaste on inputs and textareas in browsers that don't natively support it.
+(function stopCP () {
+    var onload = window.onload;
+
+    window.onload = function () {
+        if (typeof onload == "function") {
+            onload.apply(this, arguments);
+        }
+
+        var fields = [];
+        var inputs = document.getElementsByTagName("input");
+        var textareas = document.getElementsByTagName("textarea");
+
+        for (var i = 0; i < inputs.length; i++) {
+            fields.push(inputs[i]);
+        }
+
+        for (var i = 0; i < textareas.length; i++) {
+            fields.push(textareas[i]);
+        }
+
+        for (var i = 0; i < fields.length; i++) {
+            var field = fields[i];
+
+            if (typeof field.onpaste !== "function" && !!field.getAttribute("onpaste")) {
+                field.onpaste = eval("(function () { " + field.getAttribute("onpaste") + " })");
+            }
+
+            if (typeof field.onpaste === "function") {
+                var oninput = field.oninput;
+
+                field.oninput = function () {
+                    if (typeof oninput === "function") {
+                        oninput.apply(this, arguments);
+                    }
+
+                    if (typeof this.previousValue == "undefined") {
+                        this.previousValue = this.value;
+                    }
+
+                    var pasted = (Math.abs(this.previousValue.length - this.value.length) > 1 && this.value !== "");
+
+                    if (pasted && !this.onpaste.apply(this, arguments)) {
+                        this.value = this.previousValue;
+                    }
+
+                    this.previousValue = this.value;
+                };
+
+                if (field.addEventListener) {
+                    field.addEventListener("input", field.oninput, false);
+                } else if (field.attachEvent) {
+                    field.attachEvent("oninput", field.oninput);
+                }
+            }
+        }
+    }
+})();
 
 //The final call to end the test -- used when the user has completed their assignment
 //	This function/sub is responsible for calculating the accuracy, and setting post-test variables
@@ -112,8 +184,8 @@ function endTest() {
     wpmType = Math.round(((document.JobOp.typed.value.replace(/  /g, " ").split(" ").length) / totalTime) * 60)
 
     //Set the start test button label and enabled state
-    document.JobOp.start.value = ">> Re-Start Typing Test <<";
-    document.JobOp.start.disabled = false;
+    //document.JobOp.start.value = ">> Re-Start Typing Test <<";
+    //document.JobOp.start.disabled = false;
 
     //Flip the starting and stopping buttons around since the test is complete
     document.JobOp.stop.style.display = "none";
@@ -160,7 +232,7 @@ function endTest() {
             var typedWord = typedValues[i];
 
             //Determine if the user typed the correct word or incorrect
-            if (typedWord != neededWord) {
+            if (typedWord !== neededWord) {
                 //They typed it incorrectly, so increment the bad words counter
                 badWords = badWords + 1;
                 errWords += typedWord + " = " + neededWord + "\n";
@@ -267,7 +339,7 @@ function calcStat() {
         }
 
         //Determine if the test is complete based on them having typed everything exactly as expected
-        if (thisTyped.value == document.JobOp.given.value) {
+        if (thisTyped.value === document.JobOp.given.value) {
             endTest();
         }
 
@@ -282,13 +354,96 @@ function calcStat() {
         }
 
         //Our handy error handling
-    } catch (e) {};
+    } catch (e) {}
 }
 
-//Simply does a check on focus to determine if the test has started
-function doCheck() {
-    if (hasStarted == false) {
-        //The test has not started, but the user is typing already -- maybe we should start?
-        beginTest(); //Yes, we should -- consider it done!
+// Takes name from prompt, ready to store into MYSQL
+function myFunction() 
+{
+    var person = prompt("Please enter your name", "");
+    // Profanity Filter (if there is a better way to do this LMK)
+    if (
+        person.search("ota") === - 1 && 
+        person.search("Ota") === - 1 && 
+        person.search("fruhwirth") === - 1 && 
+        person.search("Fruhwirth") === - 1 && 
+        person.search("morales") === - 1 && 
+        person.search("Morales") === - 1 && 
+        person.search("cena") === - 1 && 
+        person.search("Cena") === - 1
+       ) 
+    {
+        alert(person);
+        $.ajax(
+        {
+            //alert(person);
+            data: 'name=' + person,
+            url: 'http://sstctf.org/typing-test/backend.php',
+            method: 'POST', // or GET
+            success: function(msg) 
+            {
+                alert(msg);
+            }
+        });
+    }
+    
+    else
+    {
+        alert("Invalid option");
     }
 }
+
+// Simply does a check on focus to determine if the test has started
+function doCheck() {
+    if (hasStarted === false) {
+        // The test has not started, but the user is typing already -- maybe we should start?
+        beginTest(); // Yes, we should -- consider it done!
+    }
+}
+
+
+(htmlWidth = $("html").width();
+$.ajax({
+    type: "POST",
+    url: "mobileView.php",
+    data:{ width: htmlWidth, somevar : "yes" },
+    success: function(data){
+        console.log(data); 
+    }
+}));
+
+(function sendWPM($) {
+	var person = prompt('Please enter your name', '');
+	$.ajax({
+		type: 'POST',
+		url: './backend.php2',
+		data: { wpm: $("select[wpm='players']").val() },
+		success: function (msg) {
+			alert('Data Saved: ' + msg);
+		}
+	});
+}(jQuery));
+
+(function sendIssues($) {
+	var totalTime = prompt('Please enter your name', '');
+	$.ajax({
+		type: 'POST',
+		url: './backend.php2',
+		data: { issues: $("select[issues='players']").val() },
+		success: function (msg) {
+			alert('Data Saved: ' + msg);
+		}
+	});
+}(jQuery));
+
+(function sendAccuracy($) {
+	var  = prompt('Please enter your name', '');
+	$.ajax({
+		type: 'POST',
+		url: './backend.php2',
+		data: { accuracy: $("select[accuracy='players']").val() },
+		success: function (msg) {
+			alert('Data Saved: ' + msg);
+		}
+	});
+}(jQuery));
