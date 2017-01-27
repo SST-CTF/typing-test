@@ -21,6 +21,9 @@
 </style>
 
         <?php
+    // Include Password File
+include 'password.php';
+    
 // define variables and set to empty values
 $nameErr = $emailErr = $genderErr = $websiteErr = "";
 $name = $email = $gender = $comment = $website = "";
@@ -207,10 +210,11 @@ function test_input($data) {
         
         echo "<h2>Your Input:</h2>";
         echo $name;
+        echo $person;
+        echo "\n";
 
 $servername = "localhost";
 $username = "www";
-$password = "[HIDDEN]";   // TODO: Remove password from index.php by calling password from another file
 $dbname = "typing_test";
 
 // Create connection
